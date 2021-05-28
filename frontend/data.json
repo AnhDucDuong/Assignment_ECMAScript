@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Tranh decor",
+            "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
+            "price": 50000,
+            "status": false,
+            "quantity": "quantity 4",
+            "description": "description 4",
+            "cate_id": 87
+        },
+        {
+            "id": "2",
+            "name": "Tranh canvas",
+            "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
+            "price": 90000,
+            "status": false,
+            "quantity": "quantity 4",
+            "description": "description 4",
+            "cate_id": 87
+        },
+        {
+            "id": "3",
+            "name": "Tranh treo tường",
+            "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
+            "price": 90000,
+            "status": false,
+            "quantity": "quantity 4",
+            "description": "description 4",
+            "cate_id": 87
+        },
+        {
+            "id": "4",
+            "name": "Tranh ghép",
+            "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
+            "price": 90000,
+            "status": false,
+            "quantity": "quantity 4",
+            "description": "description 4",
+            "cate_id": 87
+        }
+    ]
+}
