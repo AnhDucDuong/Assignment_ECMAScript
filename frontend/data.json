@@ -18,7 +18,7 @@
             "status": false,
             "quantity": "quantity 4",
             "description": "description 4",
-            "cate_id": 87
+            "cate_id": 85
         },
         {
             "id": "3",
@@ -38,7 +38,19 @@
             "status": false,
             "quantity": "quantity 4",
             "description": "description 4",
-            "cate_id": 87
+            "cate_id": 85
+        }
+    ],
+
+    "categories": [
+        {
+            "cate_id": "85",
+            "name": "Tranh sơn dầu"
+        },
+
+        {
+            "cate_id": "87",
+            "name": "Tranh Canvas"
         }
     ]
 }

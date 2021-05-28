@@ -20,13 +20,17 @@ const Header = {
                         <div class="hidden md:flex space-x-3 flex-1 lg:ml-8">
                             <a href="/" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Trang
                                 Chủ</a>
+
                             <a href="/#/products"
                                 class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Sản
                                 Phẩm</a>
+
                             <a href="#"
                                 class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Blog</a>
+                            
                             <a href="#"
                                 class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Về Chúng Tôi</a>
+                            
                             <a href="#"
                                 class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Liên Hệ</a>
                         </div>
