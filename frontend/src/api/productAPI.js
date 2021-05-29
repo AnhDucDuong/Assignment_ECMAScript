@@ -13,6 +13,11 @@ const ProductAPI = {
         return axiosClient.get(url)
     },
 
+    add(product) {
+        const url = `/products`;
+        return axiosClient.post(url, product)
+    },
+
     remove(id) {
         const url = `/products/${id}`;
         return axiosClient.delete(url)

@@ -1,5 +1,3 @@
-import Header from '../component/header';
-import Footer from '../component/footer';
 import ProductAPI from '../api/productAPI';
 
 const Products = {
@@ -41,17 +39,13 @@ const Products = {
             }).join("")
 
             return /*html*/ `
-            ${Header.render()}
-
-            <h1>Products page</h1>
-            <div class="grid grid-rows-1">
-                <div class="grid grid-cols-4">
-                    ${result};
-                </div> 
-            </div>
-
-            ${Footer.render()}
-        `
+                <h1>Products page</h1>
+                <div class="grid grid-rows-1">
+                    <div class="grid grid-cols-4">
+                        ${result};
+                    </div> 
+                </div>
+            `
         } catch (error) {
             console.log(error);
         }

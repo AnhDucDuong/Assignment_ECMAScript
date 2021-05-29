@@ -1,6 +1,4 @@
 import ProductAPI from '../api/productAPI';
-import Header from '../component/header';
-import Footer from '../component/footer';
 import {
     parseRequestUrl
 } from './utils';
@@ -15,7 +13,6 @@ const ProductDetail = {
         } = await ProductAPI.read(id);
 
         return /*html*/ `
-            ${Header.render()}
             <section class="text-gray-600 body-font overflow-hidden">
                 <div class="container px-5 py-24 mx-auto">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -98,8 +95,6 @@ const ProductDetail = {
                     </div>
                 </div>
             </section>
-
-            ${Footer.render()}
         `
     }
 }
