@@ -1,16 +1,21 @@
-import ProductAPI from '../api/productAPI';
-import Footer from '../component/footer';
-import Header from '../component/header';
+import ProductAPI from "../api/productAPI";
+import Footer from "../component/footer";
+import Header from "../component/header";
+import {
+    parseRequestUrl
+} from "./utils"
 
-const Products = {
-    //thuộc tính
+const Category = {
     async render() {
-        try {
-            const {
-                data: products
-            } = await ProductAPI.list();
-            const result = products.map(product => {
-                return /*html*/ `
+        const {
+            id
+        } = parseRequestUrl();
+        //console.log(id);
+        const {
+            data: products
+        } = await ProductAPI.list();
+        const result = products.filter(product => product.cate_id == id).map(product => {
+            return /*html*/ `
                     <a href="/#/products/${product.id}" class="justify-center items-center">
                         <div class="p-4">
                             <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
@@ -38,23 +43,21 @@ const Products = {
                         </div>      
                     </a>
                 `
-            }).join("")
+        }).join("")
 
-            return /*html*/ `
-                ${await Header.render()}
-                <h1>Products page</h1>
-                <div class="grid grid-rows-1">
-                    <div class="grid grid-cols-4">
-                        ${result};
-                    </div> 
-                </div>
-                ${await Footer.render()}
-            `
-        } catch (error) {
-            console.log(error);
-        }
-        //const { products } = data;
+        return /*html*/ `
+            ${await Header.render()}
+
+            <h1>Categories page</h1>
+            <div class="grid grid-rows-1">
+                <div class="grid grid-cols-4">
+                    ${result};
+                </div> 
+            </div>
+
+            ${await Footer.render()}
+        `
     }
 }
 
-export default Products;
+export default Category;

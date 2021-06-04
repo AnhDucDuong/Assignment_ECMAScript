@@ -1,8 +1,12 @@
+import Footer from "../component/footer";
+import Header from "../component/header";
+
 //object literal
 const Home = {
     //thuộc tính
-    render() {
+    async render() {
         return /*html*/ `
+            ${await Header.render()}
             <!-- hero -->
             <div class="hero bg-gray-100 py-16">
                 <!-- container -->
@@ -156,6 +160,8 @@ const Home = {
             <div class="h-20">
                 
             </div>
+
+            ${await Footer.render()}
         `;
     }
 }

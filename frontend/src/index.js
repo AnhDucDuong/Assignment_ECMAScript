@@ -9,13 +9,17 @@ import {
     parseRequestUrl,
     $
 } from './pages/utils';
+import Category from './pages/Category';
+import AdminProduct from './pages/AdminProducts';
 
 const routes = {
     '/': Home,
     '/products': Products,
     '/products/:id': ProductDetail,
     '/add-product': AddProduct,
-    '/error-404': Error404
+    '/error-404': Error404,
+    '/category/:id': Category,
+    '/listproducts': AdminProduct,
 }
 
 const router = async () => {
@@ -25,10 +29,10 @@ const router = async () => {
     } = parseRequestUrl();
     const parseUrl = (resource ? `/${resource}` : '/') + (id ? `/:id` : '');
     const page = routes[parseUrl] ? routes[parseUrl] : Error404;
-    $('#header').innerHTML = await Header.render();
-    $('#footer').innerHTML = await Footer.render();
     $('#main-content').innerHTML = await page.render();
-    await page.afterRender()
+    if (page.afterRender) {
+        await page.afterRender()
+    }
 }
 
 window.addEventListener('DOMContentLoaded', router);

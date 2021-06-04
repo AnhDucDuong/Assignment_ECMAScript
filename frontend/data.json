@@ -8,7 +8,7 @@
       "status": false,
       "quantity": "quantity 4",
       "description": "description 4",
-      "cate_id": 87
+      "cate_id": "87"
     },
     {
       "id": "2",
@@ -18,7 +18,7 @@
       "status": false,
       "quantity": "quantity 4",
       "description": "description 4",
-      "cate_id": 85
+      "cate_id": "85"
     },
     {
       "id": "3",
@@ -28,25 +28,17 @@
       "status": false,
       "quantity": "quantity 4",
       "description": "description 4",
-      "cate_id": 87
+      "cate_id": "87"
     },
     {
-      "id": "4",
-      "name": "Tranh ghép",
-      "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
-      "price": 90000,
-      "status": false,
-      "quantity": "quantity 4",
-      "description": "description 4",
-      "cate_id": 85
-    },
-    {
-      "id": "100",
-      "name": "Dương Đức Anh"
+      "id": "d4a0eb3f-8d99-467a-89ec-98f210a04d08",
+      "name": "Dương Đức Anh",
+      "image": "",
+      "price": "45435",
+      "quantity": "543534",
+      "description": "354543"
     }
   ],
-
-  
   "categories": [
     {
       "cate_id": "85",
