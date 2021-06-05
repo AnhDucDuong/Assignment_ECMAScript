@@ -60,7 +60,7 @@ const ListProducts = {
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     <div class="flex items-center">
                                         <div class="ml-4">
-                                            <div class="text-sm leading-5 font-medium text-gray-900"><img class="h-20 w-40" src="" alt="">${products.image}</div>
+                                            <div class="text-sm leading-5 font-medium text-gray-900"><img class="h-30 w-40" src="${product.image}" alt=""></div>
                                         </div>
                                     </div>
                                 </td>
@@ -104,13 +104,12 @@ const ListProducts = {
 
     async afterRender() {
         const btns = $('#list-products .btn');
-        console.log(btns);
         btns.forEach(btn => {
             const id = btn.dataset.id;
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', async function () {
                 const question = confirm("Bạn có chắc chắn muốn xóa không? ");
                 if (question) {
-                    ProductAPI.remove(id);
+                    await ProductAPI.remove(id);
                     reRender(ListProducts, '#list-products');
                 }
             })

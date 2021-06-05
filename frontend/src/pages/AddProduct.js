@@ -1,10 +1,11 @@
-import ProductAPI from '../api/productAPI';
+import ProductAPI from "../api/productAPI"
 import {
     v4 as uuidv4
 } from 'uuid';
 import {
     $
 } from './utils';
+import firebase from '../firebase'
 
 const AddProduct = {
     render() {
@@ -209,7 +210,7 @@ const AddProduct = {
                                             <h5 class="mb-2 text-xl font-semibold">Mô tả:</h5>
                                             <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta" id = "description" cols="63" rows="5"></textarea>
                                             <h5 class="mb-2 text-xl font-semibold">Ảnh sản phẩm:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" type="file" name="hinh" id="image">
+                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" type="file" id="product-image">
                                             <h5 class="mb-2 text-xl font-semibold">Trạng thái:</h5>
                                             <div>
                                                 <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="status" value="0" type="radio" checked>Còn Hàng</label>
@@ -235,17 +236,27 @@ const AddProduct = {
     afterRender() {
         $('#form-add').addEventListener('submit', e => {
             e.preventDefault();
-            const product = {
-                id: uuidv4(),
-                name: $('#product-name').value,
-                image: $('#image').value,
-                price: $('#price').value,
-                quantity: $('#quantity').value,
-                description: $('#description').value,
-                cate_id: $('#cate-id').value
-            }
-            //console.log(product);
-            ProductAPI.add(product)
+            const productImage = $('#product-image').files[0];
+            let storageRef = firebase.storage().ref(`images/${productImage.name}`);
+            storageRef.put(productImage).then(function () {
+                console.log('Upload thành công!');
+                storageRef.getDownloadURL().then((url) => {
+                    const product = {
+                        id: uuidv4(),
+                        name: $('#product-name').value,
+                        image: url,
+                        price: $('#price').value,
+                        quantity: $('#quantity').value,
+                        description: $('#description').value,
+                        cate_id: $('#cate-id').value
+                    }
+                    //console.log(product);
+                    ProductAPI.add(product)
+                })
+            })
+
+            /*
+             */
         })
     }
 }

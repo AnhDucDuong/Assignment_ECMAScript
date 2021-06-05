@@ -31,12 +31,20 @@
       "cate_id": "87"
     },
     {
-      "id": "d4a0eb3f-8d99-467a-89ec-98f210a04d08",
-      "name": "Dương Đức Anh",
-      "image": "",
-      "price": "45435",
-      "quantity": "543534",
-      "description": "354543"
+      "id": "670ee6bb-fc1e-4999-afa2-a54324945d05",
+      "name": "da123",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2Fhau_nuong.jpg?alt=media&token=d6cfa3fb-2da5-4bbb-98b9-57d0b235e05b",
+      "price": "12345678",
+      "quantity": "123456789",
+      "description": "sgfdgfdgfggggggg"
+    },
+    {
+      "id": "4fb229cf-b98c-43bd-a024-0dcc38d84dcb",
+      "name": "new product",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2Fone-piece.jfif?alt=media&token=2f2d5f6f-d232-4504-af5a-a87ab60fc42a",
+      "price": "10000000",
+      "quantity": "1200",
+      "description": "siêu đẹp lun"
     }
   ],
   "categories": [
