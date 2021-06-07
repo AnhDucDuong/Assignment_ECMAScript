@@ -32,7 +32,7 @@
     },
     {
       "id": "670ee6bb-fc1e-4999-afa2-a54324945d05",
-      "name": "da123",
+      "name": "da123đẹp zaiiiiii",
       "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2Fhau_nuong.jpg?alt=media&token=d6cfa3fb-2da5-4bbb-98b9-57d0b235e05b",
       "price": "12345678",
       "quantity": "123456789",
@@ -45,6 +45,22 @@
       "price": "10000000",
       "quantity": "1200",
       "description": "siêu đẹp lun"
+    },
+    {
+      "id": "11c7f7d0-06a4-43d8-8253-0f63e7254c4a",
+      "name": "Dương Đức Anh",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210521153823.png?alt=media&token=710a68f4-407f-466a-9dd1-af0a97209d94",
+      "price": "500000",
+      "quantity": "3324",
+      "description": "3wafsfs"
+    },
+    {
+      "id": "43fe17ce-2660-497f-9058-5b5412da7c04",
+      "name": "da siu đz",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2Fngheu-hap-sa.jpg?alt=media&token=3db0959e-9347-4ae2-b762-30b233311a16",
+      "price": "2456789",
+      "quantity": "2345678",
+      "description": "gfgghfgdfsdfdddddddddd"
     }
   ],
   "categories": [

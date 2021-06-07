@@ -11,6 +11,7 @@ import {
 } from './pages/utils';
 import Category from './pages/Category';
 import AdminProduct from './pages/AdminProducts';
+import EditProduct from './pages/EditProduct';
 
 const routes = {
     '/': Home,
@@ -19,7 +20,8 @@ const routes = {
     '/add-product': AddProduct,
     '/error-404': Error404,
     '/category/:id': Category,
-    '/listproducts': AdminProduct,
+    '/list-products': AdminProduct,
+    '/edit-product/:id': EditProduct
 }
 
 const router = async () => {
