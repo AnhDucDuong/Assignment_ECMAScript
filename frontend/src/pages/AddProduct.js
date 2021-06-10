@@ -7,9 +7,20 @@ import {
 } from './utils';
 import SidebarMenu from "../component/SidebarMenu"
 import firebase from '../firebase'
+import CategoryAPI from "../api/categoryAPI";
 
 const AddProduct = {
-    render() {
+    async render() {
+        const {
+            data: categories
+        } = await CategoryAPI.list();
+        //console.log(categories);
+        const result = categories.map(category => {
+            return /*html*/ `
+                <option value="${category.id}">${category.name}</a></option>
+            `
+        }).join("")
+
         return /*html*/ `
             <div>
                 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -135,9 +146,9 @@ const AddProduct = {
                                         <h5 class="mb-2 text-xl font-semibold">Tên sản phẩm:</h5>
                                         <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="text" placeholder="Tên sản phẩm" id="product-name">
                                             <h5 class="mb-2 text-xl font-semibold">Danh mục:</h5>
-                                            <select class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" name="ma_loai">
+                                            <select class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" id="cate-id">
                                                 <option value="">Danh mục</option>
-                                                
+                                                ${result}
                                             </select>
                                             <h5 class="mb-2 text-xl font-semibold">Đơn giá:</h5>
                                             <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="number" name="don_gia" id="price">
@@ -151,9 +162,9 @@ const AddProduct = {
                                             <h5 class="mb-2 text-xl font-semibold">Ảnh sản phẩm:</h5>
                                             <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" type="file" id="product-image">
                                             <h5 class="mb-2 text-xl font-semibold">Trạng thái:</h5>
-                                            <div>
-                                                <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="status" value="0" type="radio" checked>Còn Hàng</label>
-                                                <label class="mb-2 text-base font-medium"><input class="mr-2" name="status" id="status" value="1" type="radio">Hết hàng</label>
+                                            <div id="status">
+                                                <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="" value="Còn hàng" type="radio" checked>Còn Hàng</label>
+                                                <label class="mb-2 text-base font-medium"><input class="mr-2" name="status" id="" value="Hết hàng" type="radio">Hết hàng</label>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +198,8 @@ const AddProduct = {
                         price: $('#price').value,
                         quantity: $('#quantity').value,
                         description: $('#description').value,
-                        cate_id: $('#cate-id').value
+                        cate_id: $('#cate-id').value,
+                        status: $('#status').value
                     }
                     //console.log(product);
                     await ProductAPI.add(product);

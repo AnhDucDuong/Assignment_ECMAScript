@@ -1,25 +1,14 @@
-import SidebarMenu from "../component/SidebarMenu";
-import ProductAPI from "../api/productAPI"
-import {
-    parseRequestUrl,
-    $
-} from "./utils";
+import ListCategories from "../component/ListCategories"
+import SidebarMenu from "../component/SidebarMenu"
 
-const EditProduct = {
+const AdminCategory = {
     async render() {
-        const {
-            id
-        } = parseRequestUrl
-            (); //Lấy id trên url
-        const {
-            data: product
-        } = await ProductAPI.read(id);
         return /*html*/ `
             <div>
                 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
                 
                 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
-                    ${SidebarMenu.render()}
+                    ${await SidebarMenu.render()}
 
                     <div class="flex-1 flex flex-col overflow-hidden">
                         <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
@@ -129,45 +118,22 @@ const EditProduct = {
                                 </div>
                             </div>
                         </header>
-
+                        
                         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                             <div class="container mx-auto px-6 py-8">
-                                <h3 class="text-gray-700 text-3xl font-medium">Sửa sản phẩm</h3>
+                                <h3 class="text-gray-700 text-3xl font-medium">Danh mục sản phẩm</h3>
 
-                                <form id="form-update-product" enctype="multipart/form-data" class="mt-10 ml-6">
-                                    <div class="grid grid-cols-2">
-                                        <div class="">
-                                        <h5 class="mb-2 text-xl font-semibold">Tên sản phẩm:</h5>
-                                        <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="text" placeholder="Tên sản phẩm" id="product-name" value="${product.name}">
-                                            <h5 class="mb-2 text-xl font-semibold">Danh mục:</h5>
-                                            <select class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" name="ma_loai">
-                                                <option value="">Danh mục</option>
-                                                
-                                            </select>
-                                            <h5 class="mb-2 text-xl font-semibold">Đơn giá:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="number" name="don_gia" id="price" value="${product.price}">
-                                            <h5 class="mb-2 text-xl font-semibold">Số lượng:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="number" name="so_luong" id="quantity" value="${product.quantity}">
-                                        </div>
-
-                                        <div class="">
-                                            <h5 class="mb-2 text-xl font-semibold">Mô tả:</h5>
-                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta" id = "description" cols="63" rows="5">${product.description}</textarea>
-                                            <h5 class="mb-2 text-xl font-semibold">Ảnh sản phẩm:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" accept="image/png, image/jpeg" type="file" id="product-image" value="${product.image}">
-                                            <h5 class="mb-2 text-xl font-semibold">Trạng thái:</h5>
-                                            <div>
-                                                <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="status" value="0" type="radio" checked>Còn Hàng</label>
-                                                <label class="mb-2 text-base font-medium"><input class="mr-2" name="status" id="status" value="1" type="radio">Hết hàng</label>
-                                            </div>
+                                <div class="mt-8">
+                                    <a href="/#/add-category" class="bg-indigo-600 px-4 py-2 text-white rounded-md">Thêm mới</a>
+                                </div>
+                                
+                                <div class="flex flex-col mt-6">
+                                    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                                        <div id="list-categories" class="btn align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                                            ${await ListCategories.render()}
                                         </div>
                                     </div>
-
-                                    <div class="mt-4">
-                                        <input type="submit" value="Cập nhật" class="bg-indigo-600 px-4 py-2 text-white rounded-md">
-                                        <a href="/#/list-products" class="bg-indigo-600 px-4 py-2 text-white rounded-md ml-2">Danh sách</a>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </main>
                     </div>
@@ -177,24 +143,8 @@ const EditProduct = {
     },
 
     async afterRender() {
-        const {
-            id
-        } = parseRequestUrl
-            (); //Lấy id trên url
-        const {
-            data: product
-        } = await ProductAPI.read(id);
-
-        $('#form-update-product').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const newProduct = {
-                ...product,
-                name: $('#product-name').value
-            };
-            await ProductAPI.update(id, newProduct);
-            window.location.hash = '/list-products';
-        })
+        return `${await ListCategories.afterRender()}`
     }
-};
+}
 
-export default EditProduct;
+export default AdminCategory;

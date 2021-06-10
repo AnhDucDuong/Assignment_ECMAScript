@@ -9,7 +9,7 @@ const Header = {
             //console.log(categories);
             const result = categories.map(category => {
                 return /*html*/ `
-                    <li><a href="/#/category/${category.cate_id}" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">${category.name}</a></li>
+                    <li><a href="/#/category/${category.id}" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">${category.name}</a></li>
                 `
             }).join("")
 

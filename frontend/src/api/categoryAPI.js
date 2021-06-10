@@ -8,23 +8,23 @@ const CategoryAPI = {
         return axiosClient.get(url)
     },
 
-    read(cate_id) {
-        const url = `/categories/${cate_id}`;
+    read(id) {
+        const url = `/categories/${id}`;
         return axiosClient.get(url)
     },
 
-    remove(cate_id) {
-        const url = `/categories/${cate_id}`;
+    remove(id) {
+        const url = `/categories/${id}`;
         return axiosClient.delete(url)
     },
 
-    add(product) {
+    add(category) {
         const url = `/categories`;
-        return axiosClient.post(url, product)
+        return axiosClient.post(url, category)
     },
 
-    update(cate_id, data) {
-        const url = `/categories/${cate_id}`;
+    update(id, data) {
+        const url = `/categories/${id}`;
         return axiosClient.put(url, data)
     }
 }

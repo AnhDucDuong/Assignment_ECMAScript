@@ -3,8 +3,6 @@ import Error404 from './pages/Error404';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Products from './pages/Products';
-import Header from './component/header';
-import Footer from './component/footer';
 import {
     parseRequestUrl,
     $
@@ -12,6 +10,9 @@ import {
 import Category from './pages/Category';
 import AdminProduct from './pages/AdminProducts';
 import EditProduct from './pages/EditProduct';
+import AdminCategory from './pages/AdminCategory';
+import AddCategory from './pages/AddCategory';
+import EditCategory from './pages/EditCategory';
 
 const routes = {
     '/': Home,
@@ -21,7 +22,10 @@ const routes = {
     '/error-404': Error404,
     '/category/:id': Category,
     '/list-products': AdminProduct,
-    '/edit-product/:id': EditProduct
+    '/edit-product/:id': EditProduct,
+    '/list-categories': AdminCategory,
+    '/add-category': AddCategory,
+    '/edit-category/:id': EditCategory,
 }
 
 const router = async () => {

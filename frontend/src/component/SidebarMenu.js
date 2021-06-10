@@ -1,5 +1,18 @@
+import {
+    parseRequestUrl,
+    $
+} from '../pages/utils';
+
 const SidebarMenu = {
     render() {
+        /*const {
+            resource
+        } = parseRequestUrl();
+        console.log(resource);
+        if (resource === 'list-categories' || resource === 'list-products') {
+            document.getElementById('changeClass').className = 'hello'
+        }*/
+
         return /*html*/ `
             <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
                     
@@ -27,8 +40,20 @@ const SidebarMenu = {
         
                         <span class="mx-3">Dashboard</span>
                     </a>
+
+                    <a id="changeClass" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        href="/#/list-categories">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
         
-                    <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100"
+                        <span class="mx-3">Danh mục</span>
+                    </a>
+        
+                    <a id="changeClass" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
                         href="/#/list-products">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -38,18 +63,6 @@ const SidebarMenu = {
                         </svg>
         
                         <span class="mx-3">Sản phẩm</span>
-                    </a>
-        
-                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                        href="/tables">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                            </path>
-                        </svg>
-        
-                        <span class="mx-3">Tables</span>
                     </a>
         
                     <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
@@ -66,6 +79,10 @@ const SidebarMenu = {
                 </nav>
             </div>
         `
+    },
+
+    afterRender() {
+
     }
 }
 

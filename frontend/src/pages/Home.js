@@ -1,3 +1,4 @@
+import CategoryAPI from "../api/categoryAPI";
 import Footer from "../component/footer";
 import Header from "../component/header";
 
@@ -5,6 +6,16 @@ import Header from "../component/header";
 const Home = {
     //thuộc tính
     async render() {
+        const {
+            data: categories
+        } = await CategoryAPI.list();
+        //console.log(categories);
+        const result = categories.map(category => {
+            return /*html*/ `
+                <a href="/#/category/${category.id}"><li class="border-b border-gray-500 pl-8 py-2 text-lg h-12 hover:bg-gray-200">${category.name}</li></a>
+            `
+        }).join("")
+
         return /*html*/ `
             ${await Header.render()}
             <!-- hero -->
@@ -157,9 +168,259 @@ const Home = {
                 </div>
             </div><!-- end hero -->
 
-            <div class="h-20">
+            <section class="flex px-4 sm:px-8 lg:px-16 xl:px-20 mt-8 py-4">
+                <div class="w-96">
+                        <div class="flex bg-gray-700 py-2 pl-8 pr-28 rounded-t">
+                            <img class="py-2" src="../images/menubar.png" alt="">
+                            <a class="text-2xl text-white" href="">DANH MỤC</a>
+                        </div>
+
+                        <div class="bg-gray-100 rounded-b">
+                            <ul class="grid grid-rows-9">
+                                ${result}
+                            </ul>
+                        </div>
+
+                        <div class="mt-10">
+                            <h2 class="font-bold text-2xl">Ưu đãi lớn</h2>
+                            <div class="mt-4 flex-col">
+                                <div class="flex">
+                                    <img width="100px" height="100px" src="https://furnist.vn/wp-content/uploads/2020/05/ghe-go-tan-bi-furnist-praha_1-2.jpg" alt="">
+                                    <div class="ml-4 flex flex-col w-40 pt-2">
+                                        <a class="mb-2 text-gray-700 hover:text-black text-md" href="">Product Name</a>
+                                        <span class="text-lg">$10.00 – $70.00</span>
+                                    </div>
+                                </div>
+                                <!--End items-->
                 
-            </div>
+                                <div class="flex mt-4">
+                                    <img width="100px" height="100px" src="https://cdn.caza.vn/products/T2062-ban-tra-mat-qua-trung-cazavn-36267_680x680.jpg" alt="">
+                                    <div class="ml-4 flex flex-col w-40 pt-2">
+                                        <a class="mb-2 text-gray-700 hover:text-black text-md" href="">Product Name</a>
+                                        <span class="text-lg">$10.00 – $70.00</span>
+                                    </div>
+                                </div>
+                                <!--End items-->
+                
+                                <div class="flex mt-4">
+                                    <img width="100px" height="100px" src="https://salt.tikicdn.com/ts/product/26/42/fa/3329ad4a9f23e5dbb34fee09bd24187e.png" alt="">
+                                    <div class="ml-4 flex flex-col w-40 pt-2">
+                                        <a class="mb-2 text-gray-700 hover:text-black text-md" href="">Product Name</a>
+                                        <span class="text-lg">$10.00 – $70.00</span>
+                                    </div>
+                                </div>
+                                <!--End items-->
+                
+                                <div class="flex mt-4">
+                                    <img width="100px" height="100px" src="https://gotrangtri.vn/wp-content/uploads/2019/05/anh-dai-dien-48.jpg" alt="">
+                                    <div class="ml-4 flex flex-col w-40 pt-2">
+                                        <a class="mb-2 text-gray-700 hover:text-black text-md" href="">Product Name</a>
+                                        <span class="text-lg">$10.00 – $70.00</span>
+                                    </div>
+                                </div>
+                                <!--End items-->
+                            </div>
+                        </div>
+                </div>
+
+                <div>
+                    <section class="bg-white py-4 mt-8 border-b border-gray-400">
+                        <h1 class="text-center text-3xl ">Sản phẩm nổi bật</h1>
+                        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-4">
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/mg_8141_b_f9aa502435444d3296db6b1a6a84c68d_grande.jpg
+                                                            ">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/mg_8132_b_c73ec4355b10447fae378494fe4de82b_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/94103960_675686906565276_4529635955342049280_o_79157ac47e2546b5b3baf934d926d599_grande.png
+                                                            ">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/1_copy_copy_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/c2_copy_copy_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/dsc05805_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/355594feb36c9d42fd115d3d21495910_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/a927c71d29a067b66059271d58d022e6_grande.png">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            </div>
+                
+                    </section>
+                    <!--Sản phẩm nổi bật-->
+                
+                    <section class="bg-white py-8 border-b border-gray-400">
+                        <h1 class="text-center text-3xl ">Sản phẩm mới</h1>
+                        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-4">
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/mg_8141_b_f9aa502435444d3296db6b1a6a84c68d_grande.jpg
+                                                            ">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/mg_8132_b_c73ec4355b10447fae378494fe4de82b_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/94103960_675686906565276_4529635955342049280_o_79157ac47e2546b5b3baf934d926d599_grande.png
+                                                            ">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/1_copy_copy_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/c2_copy_copy_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/dsc05805_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/355594feb36c9d42fd115d3d21495910_grande.jpg">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg" src="https://product.hstatic.net/1000280978/product/a927c71d29a067b66059271d58d022e6_grande.png">
+                                    <div class="pt-3 flex items-center justify-between">
+                                        <p class="">Product Name</p>
+                                        
+                                    </div>
+                                    <p class="pt-1 text-gray-900">£9.99</p>
+                                </a>
+                            </div>
+                
+                            </div>
+                
+                    </section>
+                    <!--Sản phẩm mới-->
+                </div>
+    </section>
 
             ${await Footer.render()}
         `;

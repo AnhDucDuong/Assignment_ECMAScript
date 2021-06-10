@@ -1,19 +1,14 @@
-import SidebarMenu from "../component/SidebarMenu";
-import ProductAPI from "../api/productAPI"
+import CategoryAPI from "../api/categoryAPI";
 import {
-    parseRequestUrl,
+    v4 as uuidv4
+} from 'uuid';
+import SidebarMenu from "../component/SidebarMenu";
+import {
     $
-} from "./utils";
+} from './utils';
 
-const EditProduct = {
-    async render() {
-        const {
-            id
-        } = parseRequestUrl
-            (); //Lấy id trên url
-        const {
-            data: product
-        } = await ProductAPI.read(id);
+const AddCategory = {
+    render() {
         return /*html*/ `
             <div>
                 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -129,42 +124,17 @@ const EditProduct = {
                                 </div>
                             </div>
                         </header>
-
                         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                             <div class="container mx-auto px-6 py-8">
-                                <h3 class="text-gray-700 text-3xl font-medium">Sửa sản phẩm</h3>
+                                <h3 class="text-gray-700 text-3xl font-medium">Thêm danh mục</h3>
 
-                                <form id="form-update-product" enctype="multipart/form-data" class="mt-10 ml-6">
-                                    <div class="grid grid-cols-2">
-                                        <div class="">
-                                        <h5 class="mb-2 text-xl font-semibold">Tên sản phẩm:</h5>
-                                        <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="text" placeholder="Tên sản phẩm" id="product-name" value="${product.name}">
-                                            <h5 class="mb-2 text-xl font-semibold">Danh mục:</h5>
-                                            <select class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" name="ma_loai">
-                                                <option value="">Danh mục</option>
-                                                
-                                            </select>
-                                            <h5 class="mb-2 text-xl font-semibold">Đơn giá:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="number" name="don_gia" id="price" value="${product.price}">
-                                            <h5 class="mb-2 text-xl font-semibold">Số lượng:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="number" name="so_luong" id="quantity" value="${product.quantity}">
-                                        </div>
-
-                                        <div class="">
-                                            <h5 class="mb-2 text-xl font-semibold">Mô tả:</h5>
-                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta" id = "description" cols="63" rows="5">${product.description}</textarea>
-                                            <h5 class="mb-2 text-xl font-semibold">Ảnh sản phẩm:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" accept="image/png, image/jpeg" type="file" id="product-image" value="${product.image}">
-                                            <h5 class="mb-2 text-xl font-semibold">Trạng thái:</h5>
-                                            <div>
-                                                <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="status" value="0" type="radio" checked>Còn Hàng</label>
-                                                <label class="mb-2 text-base font-medium"><input class="mr-2" name="status" id="status" value="1" type="radio">Hết hàng</label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <form id="form-add" enctype="multipart/form-data" class="mt-10 ml-6">
+                                    <h5 class="mb-2 text-xl font-semibold">Tên danh mục:</h5>
+                                    <input class="w-1/3 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="text" placeholder="Tên danh mục" id="category-name">
 
                                     <div class="mt-4">
                                         <input type="submit" value="Cập nhật" class="bg-indigo-600 px-4 py-2 text-white rounded-md">
+                                        <input type="reset" value="Nhập lại" class="bg-indigo-600 px-4 py-2 text-white rounded-md ml-2">
                                         <a href="/#/list-products" class="bg-indigo-600 px-4 py-2 text-white rounded-md ml-2">Danh sách</a>
                                     </div>
                                 </form>
@@ -176,25 +146,18 @@ const EditProduct = {
         `
     },
 
-    async afterRender() {
-        const {
-            id
-        } = parseRequestUrl
-            (); //Lấy id trên url
-        const {
-            data: product
-        } = await ProductAPI.read(id);
-
-        $('#form-update-product').addEventListener('submit', async (e) => {
+    afterRender() {
+        $('#form-add').addEventListener('submit', async e => {
             e.preventDefault();
-            const newProduct = {
-                ...product,
-                name: $('#product-name').value
-            };
-            await ProductAPI.update(id, newProduct);
-            window.location.hash = '/list-products';
+            const product = {
+                id: uuidv4(),
+                name: $('#category-name').value,
+            }
+            //console.log(product);
+            await CategoryAPI.add(product);
+            window.location.hash = '/list-categories';
         })
     }
-};
+}
 
-export default EditProduct;
+export default AddCategory;
