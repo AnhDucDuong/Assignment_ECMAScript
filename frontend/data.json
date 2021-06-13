@@ -101,6 +101,24 @@
       "quantity": "333",
       "description": "dâsda",
       "cate_id": "e5b06e3f-583c-478e-933e-23c758c63efc"
+    },
+    {
+      "id": "ea558cca-b5f3-4170-ad62-37635f270802",
+      "name": "New",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608132050.png?alt=media&token=1f786bbb-2ff7-4ec2-bb6e-178d40872b1a",
+      "price": "23000000",
+      "quantity": "50",
+      "description": "Note: <input type=\"number\"> (and other types, such as range and date) can also take a step attribute, which specifies what increment the value will go up or down by when the input controls are used (such as the up and down number buttons). In the above example we've not included a step attribute, so the value defaults to 1. This means that floats, like 3.2, will also show as invalid.",
+      "cate_id": "85"
+    },
+    {
+      "id": "a7c3d887-fdad-4f8a-9178-7ff90fffdfe7",
+      "name": "Dương Đức Anh",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608121118.png?alt=media&token=7e4121ec-b442-4e38-b980-852b70cd1715",
+      "price": "2345",
+      "quantity": "22",
+      "description": "Sự hưng phấn của Anh giúp họ tạo ra hàng loạt cơ hội ngon ăn, đặc biệt là cú cứa lòng đưa bóng chạm cột dọc của Phil Foden hay cú sút quyết đoán ngoài vòng cấm của Phillips khiến thủ môn Livakovic vất vả cứu thua.\n\nSau 15 phút đầu lép vé, Croatia cố gắng lấy lại thế trận và họ dễ thở hơn khi Anh không còn tấn công dồn dập như trước nữa. Croatia bắt đầu tổ chức vài cuộc phản công và Perisic suýt chút nữa làm nên chuyện nếu anh tỉnh táo và không quá vội vàng. Phút 26, từ quả tạt bóng vào, Perisic dứt điểm ngay nhưng cú sút của anh lại đi không chính xác.\n\nNhững phút cuối hiệp 1, Anh vẫn là đội cầm bóng nhiều hơn nhưng họ không còn tạo ra quá nhiều sức ép cũng như các cơ hội như những phút đầu trận. Hiệp 1 kết thúc với tỉ số 0-0.",
+      "cate_id": "87"
     }
   ],
   "categories": [

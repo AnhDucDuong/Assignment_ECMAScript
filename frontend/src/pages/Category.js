@@ -14,6 +14,7 @@ const Category = {
         const {
             data: products
         } = await ProductAPI.list();
+
         const result = products.filter(product => product.cate_id == id).map(product => {
             return /*html*/ `
                     <a href="/#/products/${product.id}" class="justify-center items-center">
@@ -57,6 +58,10 @@ const Category = {
 
             ${await Footer.render()}
         `
+    },
+
+    async afterRender() {
+        return `${await Header.afterRender()}`
     }
 }
 

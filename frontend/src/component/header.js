@@ -1,4 +1,8 @@
 import CategoryAPI from "../api/categoryAPI";
+import ProductAPI from "../api/productAPI";
+import {
+    $
+} from '../pages/utils';
 
 const Header = {
     async render() {
@@ -53,7 +57,7 @@ const Header = {
     
                             <div class="flex items-center space-x-4">
                                 <div class="relative hidden md:block">
-                                    <input type="search"
+                                    <input id="search" type="search"
                                         class="pl-10 pr-2 h-10 py-1 rounded-lg border border-gray-200 focus:border-gray-300 focus:outline-none focus:shadow-inner leading-none"
                                         placeholder="Search">
                                     <svg class="h-6 w-6 text-gray-300 ml-2 mt-2 stroke-current absolute top-0 left-0"
@@ -65,7 +69,7 @@ const Header = {
     
                                 <a href="#"
                                     class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
-                                    <svg class="h-6 w-6 leading-none text-gray-300 stroke-current"
+                                    <svg class="h-6 w-6 leading-none text-gray-600 stroke-current"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -74,9 +78,10 @@ const Header = {
                                 </a>
     
                                 <button type="button"
-                                    class="hidden md:block w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex justify-center items-center">
-                                    <img src="https://avatars.dicebear.com/api/bottts/2.svg" alt="bottts" width="28" height="28"
-                                        class="rounded-lg mx-auto">
+                                    class="hidden md:block w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
                                 </button>
                             </div>
                         </div>
@@ -171,10 +176,22 @@ const Header = {
                 </div>
             </div><!-- end mobile navbar -->
             `
+
         } catch (error) {
             console.log(error);
         }
 
+    },
+
+    async afterRender() {
+        $('#search').addEventListener('keydown', async e => {
+            if (e.key === "Enter") {
+                const keyword = $('#search').value;
+                //console.log(keyword);
+                //await ProductAPI.search(keyword);
+                window.location.hash = "/search-products/" + keyword;
+            }
+        })
     }
 }
 

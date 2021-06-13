@@ -424,6 +424,10 @@ const Home = {
 
             ${await Footer.render()}
         `;
+    },
+
+    async afterRender() {
+        return `${await Header.afterRender()}`
     }
 }
 

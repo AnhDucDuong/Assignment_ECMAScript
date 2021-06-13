@@ -79,10 +79,6 @@ const SidebarMenu = {
                 </nav>
             </div>
         `
-    },
-
-    afterRender() {
-
     }
 }
 

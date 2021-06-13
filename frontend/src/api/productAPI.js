@@ -8,6 +8,11 @@ const ProductAPI = {
         return axiosClient.get(url)
     },
 
+    search(id) {
+        const url = `/products?name_like=${id}`;
+        return axiosClient.get(url)
+    },
+
     read(id) {
         const url = `/products/${id}`;
         return axiosClient.get(url)

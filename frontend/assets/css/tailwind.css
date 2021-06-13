@@ -1588,6 +1588,10 @@ video {
 	padding-top: 6rem;
 	padding-bottom: 6rem;
 }
+.py-20 {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
 .pt-2 {
 	padding-top: 0.5rem;
 }
