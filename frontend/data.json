@@ -113,12 +113,30 @@
     },
     {
       "id": "a7c3d887-fdad-4f8a-9178-7ff90fffdfe7",
-      "name": "Dương Đức Anh",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608121118.png?alt=media&token=7e4121ec-b442-4e38-b980-852b70cd1715",
-      "price": "2345",
+      "name": "Dương Đức Anh 123 456",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210612075748.png?alt=media&token=dc9b76e8-4acf-4f58-ba7e-6b52a880b1c2",
+      "price": "2345678988",
+      "quantity": "2222222",
+      "description": "Sự hưng phấn của Anh giúp họ tạo ra hàng loạt cơ hội ngon ăn, đặc biệt là cú cứa lòng đưa bóng chạm cột dọc của Phil Foden hay cú sút quyết đoán ngoài vòng cấm của Phillips khiến thủ môn Livakovic vất vả cứu thua.1\n\nSau 15 phút đầu lép vé, Croatia cố gắng lấy lại thế trận và họ dễ thở hơn khi Anh không còn tấn công dồn dập như trước nữa. Croatia bắt đầu tổ chức vài cuộc phản công và Perisic suýt chút nữa làm nên chuyện nếu anh tỉnh táo và không quá vội vàng. Phút 26, từ quả tạt bóng vào, Perisic dứt điểm ngay nhưng cú sút của anh lại đi không chính xác.\n\nNhững phút cuối hiệp 1, Anh vẫn là đội cầm bóng nhiều hơn nhưng họ không còn tạo ra quá nhiều sức ép cũng như các cơ hội như những phút đầu trận. Hiệp 1 kết thúc với tỉ số 0-0.\nahihi",
+      "cate_id": "4ddf8226-5b69-4c1f-bca2-bdf8426c5bc2"
+    },
+    {
+      "id": "267c9e77-3736-47c2-a444-fc2cbe7f08b7",
+      "name": "test1",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210526233558.png?alt=media&token=dedc2d25-dac6-40e5-9feb-3b589ace5067",
+      "price": "500000",
       "quantity": "22",
-      "description": "Sự hưng phấn của Anh giúp họ tạo ra hàng loạt cơ hội ngon ăn, đặc biệt là cú cứa lòng đưa bóng chạm cột dọc của Phil Foden hay cú sút quyết đoán ngoài vòng cấm của Phillips khiến thủ môn Livakovic vất vả cứu thua.\n\nSau 15 phút đầu lép vé, Croatia cố gắng lấy lại thế trận và họ dễ thở hơn khi Anh không còn tấn công dồn dập như trước nữa. Croatia bắt đầu tổ chức vài cuộc phản công và Perisic suýt chút nữa làm nên chuyện nếu anh tỉnh táo và không quá vội vàng. Phút 26, từ quả tạt bóng vào, Perisic dứt điểm ngay nhưng cú sút của anh lại đi không chính xác.\n\nNhững phút cuối hiệp 1, Anh vẫn là đội cầm bóng nhiều hơn nhưng họ không còn tạo ra quá nhiều sức ép cũng như các cơ hội như những phút đầu trận. Hiệp 1 kết thúc với tỉ số 0-0.",
-      "cate_id": "87"
+      "description": "234567fdsgfgfdgf",
+      "cate_id": "85"
+    },
+    {
+      "id": "963ca149-aa2b-4b50-98f4-86fc9d70aad6",
+      "name": "test2",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210522000859.png?alt=media&token=20196287-c850-4034-8ada-00d314e7feba",
+      "price": "500000",
+      "quantity": "222",
+      "description": "fdsafasdfdssdf",
+      "cate_id": "85"
     }
   ],
   "categories": [
@@ -164,7 +182,7 @@
     },
     {
       "id": "e5b06e3f-583c-478e-933e-23c758c63efc",
-      "name": "Danh mục mới số 1 VN"
+      "name": "Danh mục mới số 1 VN ok men"
     }
   ]
 }

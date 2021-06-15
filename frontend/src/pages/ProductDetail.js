@@ -14,10 +14,39 @@ const ProductDetail = {
             data: product
         } = await ProductAPI.read(id);
 
+        const {
+            data: products
+        } = await ProductAPI.list();
+
+        const result = products.filter(product_cate => product_cate.cate_id == product.cate_id).map(product_cate => {
+            return `
+                <a href="/#/products/${product_cate.id}" class="justify-center items-center">
+                    <div class="p-4 w-96">
+                        <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
+                            <div class="prod-title">
+                                <p class="text-2xl uppercase text-gray-900 font-bold">${product_cate.name}</p>
+                            </div>
+
+                            <div class="prod-img">
+                                <img src="${product_cate.image}" class="object-cover object-center">
+                            </div>
+
+                            <div class="prod-info grid gap-10">
+                                <div class="flex flex-col md:flex-col justify-between items-center text-gray-900">
+                                    <p class="font-bold text-xl py-4">Giá: ${product_cate.price} VNĐ</p>
+                                    <button class="w-full px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                </a>
+            `
+        }).join("")
+
         return /*html*/ `
             ${await Header.render()}
             <section class="text-gray-600 body-font overflow-hidden">
-                <div class="container px-5 py-24 mx-auto">
+                <div class="container px-5 py-8 mx-auto">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
                     <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="${product.image}">
                     <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -98,6 +127,38 @@ const ProductDetail = {
                     </div>
                 </div>
             </section>
+
+            <section class="container mx-auto px-36 flex justify-between text-gray-600">
+                <div class="max-w-3xl">
+                    <div class="mb-4">
+                        <h1 class="font-normal text-4xl mb-1">Mô tả sản phẩm</h1>
+                        <svg width="94" height="5" viewBox="0 0 139 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.93577e-05 2H139" stroke="#E2B65C" stroke-width="3" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+
+                    <p class="text-gray-500 text-lg">
+                        ${product.description}
+                    </p>
+                </div>
+                <!--Mô tả chi tiết-->
+
+                <div class="">
+                    <div class="pl-6 mb-4">
+                        <h1 class="font-normal text-4xl mb-1">Sản phẩm cùng loại</h1>
+                        <svg width="160" height="5" viewBox="0 0 139 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.93577e-05 2H139" stroke="#E2B65C" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+
+                    <div class="flex flex-col">
+                        ${result}
+                    </div>
+                    <!---Product-->
+                </div>
+                <!--Sản phẩm cùng loại-->
+            </section>
+            <!--Mô tả chi tiết và sản phẩm cùng loại-->
             ${await Footer.render()}
         `
     },

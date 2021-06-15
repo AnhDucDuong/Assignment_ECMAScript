@@ -1,19 +1,31 @@
 import SidebarMenu from "../component/SidebarMenu";
 import ProductAPI from "../api/productAPI"
+import firebase from '../firebase'
 import {
     parseRequestUrl,
     $
 } from "./utils";
+import CategoryAPI from "../api/categoryAPI";
 
 const EditProduct = {
     async render() {
         const {
             id
-        } = parseRequestUrl
-            (); //Lấy id trên url
+        } = parseRequestUrl(); //Lấy id trên url
         const {
             data: product
         } = await ProductAPI.read(id);
+
+        const {
+            data: categories
+        } = await CategoryAPI.list();
+        //console.log(categories);
+        const result = categories.map(category => {
+            return /*html*/ `
+                <option value="${category.id}" ${product.cate_id === category.id ? `selected`: ''} >${category.name}</option>
+            `
+        }).join("")
+
         return /*html*/ `
             <div>
                 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -140,9 +152,9 @@ const EditProduct = {
                                         <h5 class="mb-2 text-xl font-semibold">Tên sản phẩm:</h5>
                                         <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="text" placeholder="Tên sản phẩm" id="product-name" value="${product.name}">
                                             <h5 class="mb-2 text-xl font-semibold">Danh mục:</h5>
-                                            <select class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" name="ma_loai">
-                                                <option value="">Danh mục</option>
-                                                
+                                            
+                                            <select class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" name="ma_loai" id="cate-id">
+                                                ${result}
                                             </select>
                                             <h5 class="mb-2 text-xl font-semibold">Đơn giá:</h5>
                                             <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="number" name="don_gia" id="price" value="${product.price}">
@@ -187,12 +199,25 @@ const EditProduct = {
 
         $('#form-update-product').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const newProduct = {
-                ...product,
-                name: $('#product-name').value
-            };
-            await ProductAPI.update(id, newProduct);
-            window.location.hash = '/list-products';
+            const productImage = $('#product-image').files[0];
+            let storageRef = firebase.storage().ref(`images/${productImage.name}`);
+            storageRef.put(productImage).then(function () {
+                console.log('Upload thành công!');
+                storageRef.getDownloadURL().then(async (url) => {
+                    const newProduct = {
+                        ...product,
+                        name: $('#product-name').value,
+                        image: url,
+                        price: $('#price').value,
+                        quantity: $('#quantity').value,
+                        description: $('#description').value,
+                        cate_id: $('#cate-id').value,
+                        status: $('#status').value
+                    };
+                    await ProductAPI.update(id, newProduct);
+                    window.location.hash = '/list-products';
+                })
+            })
         })
     }
 };

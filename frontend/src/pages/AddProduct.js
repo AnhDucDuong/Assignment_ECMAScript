@@ -17,7 +17,7 @@ const AddProduct = {
         //console.log(categories);
         const result = categories.map(category => {
             return /*html*/ `
-                <option value="${category.id}">${category.name}</a></option>
+                <option value="${category.id}">${category.name}</option>
             `
         }).join("")
 
