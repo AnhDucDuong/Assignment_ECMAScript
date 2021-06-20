@@ -67,7 +67,7 @@ const Header = {
                                     </svg>
                                 </div>
     
-                                <a href="#"
+                                <button 
                                     class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
                                     <svg class="h-6 w-6 leading-none text-gray-600 stroke-current"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,7 +75,7 @@ const Header = {
                                             d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                     </svg>
                                     <span class="pl-1 text-gray-500 text-md">0</span>
-                                </a>
+                                </button>
     
                                 <button type="button"
                                     class="hidden md:block w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner flex justify-center items-center">
@@ -189,7 +189,7 @@ const Header = {
                 const keyword = $('#search').value;
                 //console.log(keyword);
                 //await ProductAPI.search(keyword);
-                window.location.hash = "/search-products/" + keyword;
+                window.location.hash = `/search-products/${keyword}`;
             }
         })
     }

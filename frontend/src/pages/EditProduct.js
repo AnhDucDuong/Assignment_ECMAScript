@@ -197,6 +197,8 @@ const EditProduct = {
             data: product
         } = await ProductAPI.read(id);
 
+        console.log(document.forms['form-update-product']['product-image'].files[0])
+
         $('#form-update-product').addEventListener('submit', async (e) => {
             e.preventDefault();
             const productImage = $('#product-image').files[0];

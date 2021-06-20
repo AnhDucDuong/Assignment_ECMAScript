@@ -3,12 +3,11 @@
     {
       "id": "1",
       "name": "Tranh decor số 1 VN",
-      "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
-      "price": 50000,
-      "status": false,
-      "quantity": "quantity 4",
-      "description": "description 4",
-      "cate_id": "87"
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FCity%20Night%20Lights%20Tumblr%20Banner.png?alt=media&token=ad579c12-36a8-4d0c-b786-7530732abbc7",
+      "price": "5000011",
+      "quantity": "332444",
+      "description": "description 4sdafdsffffdddđ",
+      "cate_id": "f66459fd-8808-4ca7-8a1f-4fc6ee40d031"
     },
     {
       "id": "2",
@@ -131,12 +130,12 @@
     },
     {
       "id": "963ca149-aa2b-4b50-98f4-86fc9d70aad6",
-      "name": "test2",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210522000859.png?alt=media&token=20196287-c850-4034-8ada-00d314e7feba",
-      "price": "500000",
-      "quantity": "222",
-      "description": "fdsafasdfdssdf",
-      "cate_id": "85"
+      "name": "test2dsaf",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608075617.png?alt=media&token=1ec44d12-20ff-43cf-a40e-69d3d79ecc65",
+      "price": "500000333",
+      "quantity": "222333",
+      "description": "fdsafasdfdssdffdsfds",
+      "cate_id": "fa79f55f-3b9e-46fb-93d5-b9bedc61522d"
     }
   ],
   "categories": [
@@ -182,7 +181,15 @@
     },
     {
       "id": "e5b06e3f-583c-478e-933e-23c758c63efc",
-      "name": "Danh mục mới số 1 VN ok men"
+      "name": "Danh mục mới số 1 VN"
+    },
+    {
+      "name": "TestPostMan",
+      "id": "VRRdqvR"
+    },
+    {
+      "name": "DATEST123",
+      "id": "BSdXcmf"
     }
   ]
 }

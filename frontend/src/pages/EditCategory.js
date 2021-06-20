@@ -156,13 +156,13 @@ const EditCategory = {
         } = parseRequestUrl
             (); //Lấy id trên url
         const {
-            data: product
+            data: category
         } = await CategoryAPI.read(id);
 
         $('#form-update-category').addEventListener('submit', async (e) => {
             e.preventDefault();
             const newCategory = {
-                ...product,
+                ...category,
                 name: $('#category-name').value
             };
             await CategoryAPI.update(id, newCategory);
