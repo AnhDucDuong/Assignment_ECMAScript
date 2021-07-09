@@ -48,8 +48,6 @@ const Category = {
 
         return /*html*/ `
             ${await Header.render()}
-
-            <h1>Categories page</h1>
             <div class="grid grid-rows-1">
                 <div class="grid grid-cols-4">
                     ${result};

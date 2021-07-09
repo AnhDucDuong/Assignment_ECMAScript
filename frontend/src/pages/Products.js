@@ -14,8 +14,8 @@ const Products = {
                     <a href="/#/products/${product.id}" class="justify-center items-center">
                         <div class="p-4">
                             <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
-                                <div class="prod-title">
-                                    <p class="text-2xl uppercase text-gray-900 font-bold">${product.name}</p>
+                                <div class="prod-title pb-2">
+                                    <p class="text-2xl text-gray-900">${product.name}</p>
                                 </div>
     
                                 <div class="prod-img">

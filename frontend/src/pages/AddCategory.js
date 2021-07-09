@@ -131,11 +131,11 @@ const AddCategory = {
                                 <form id="form-add" enctype="multipart/form-data" class="mt-10 ml-6">
                                     <h5 class="mb-2 text-xl font-semibold">Tên danh mục:</h5>
                                     <input class="w-1/3 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2" type="text" placeholder="Tên danh mục" id="category-name">
-
+                                    
                                     <div class="mt-4">
                                         <input type="submit" value="Cập nhật" class="bg-indigo-600 px-4 py-2 text-white rounded-md">
                                         <input type="reset" value="Nhập lại" class="bg-indigo-600 px-4 py-2 text-white rounded-md ml-2">
-                                        <a href="/#/list-products" class="bg-indigo-600 px-4 py-2 text-white rounded-md ml-2">Danh sách</a>
+                                        <a href="/#/list-categories" class="bg-indigo-600 px-4 py-2 text-white rounded-md ml-2">Danh sách</a>
                                     </div>
                                 </form>
                             </div>
@@ -149,13 +149,28 @@ const AddCategory = {
     afterRender() {
         $('#form-add').addEventListener('submit', async e => {
             e.preventDefault();
-            const product = {
+            const newCategory = {
                 id: uuidv4(),
                 name: $('#category-name').value,
             }
-            //console.log(product);
-            await CategoryAPI.add(product);
-            window.location.hash = '/list-categories';
+            //console.log(newCategory.name);
+            const {
+                data: categories
+            } = await CategoryAPI.list();
+
+            categories.map((category) => {
+                if (category.name == newCategory.name) {
+                    alert("Sản phẩm đã tồn tại")
+                    throw '';
+                }
+            })
+
+            if (newCategory.name.length == 0) {
+                alert("Không được để trống dữ liệu")
+            } else {
+                await CategoryAPI.add(newCategory);
+                window.location.hash = '/list-categories';
+            }
         })
     }
 }

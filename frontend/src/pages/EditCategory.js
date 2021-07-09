@@ -131,7 +131,7 @@ const EditCategory = {
                         </header>
                         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                             <div class="container mx-auto px-6 py-8">
-                                <h3 class="text-gray-700 text-3xl font-medium">Thêm danh mục</h3>
+                                <h3 class="text-gray-700 text-3xl font-medium">Sửa danh mục</h3>
 
                                 <form id="form-update-category" enctype="multipart/form-data" class="mt-10 ml-6">
                                     <h5 class="mb-2 text-xl font-semibold">Tên danh mục:</h5>
@@ -165,8 +165,24 @@ const EditCategory = {
                 ...category,
                 name: $('#category-name').value
             };
-            await CategoryAPI.update(id, newCategory);
-            window.location.hash = '/list-categories';
+            const {
+                data: categories
+            } = await CategoryAPI.list();
+
+            categories.map((category) => {
+                if (category.name == newCategory.name) {
+                    alert("Sản phẩm đã tồn tại")
+                    throw '';
+                }
+            })
+
+            if (newCategory.name.length == 0) {
+                alert("Không được để trống dữ liệu")
+            } else {
+                await CategoryAPI.update(id, newCategory);
+                window.location.hash = '/list-categories';
+            }
+
         })
     }
 }

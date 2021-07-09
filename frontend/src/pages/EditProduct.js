@@ -163,15 +163,12 @@ const EditProduct = {
                                         </div>
 
                                         <div class="">
-                                            <h5 class="mb-2 text-xl font-semibold">Mô tả:</h5>
-                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta" id = "description" cols="63" rows="5">${product.description}</textarea>
                                             <h5 class="mb-2 text-xl font-semibold">Ảnh sản phẩm:</h5>
-                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" accept="image/png, image/jpeg" type="file" id="product-image" value="${product.image}">
-                                            <h5 class="mb-2 text-xl font-semibold">Trạng thái:</h5>
-                                            <div>
-                                                <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="status" value="0" type="radio" checked>Còn Hàng</label>
-                                                <label class="mb-2 text-base font-medium"><input class="mr-2" name="status" id="status" value="1" type="radio">Hết hàng</label>
-                                            </div>
+                                            <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" type="file" id="product-image" value="${product.image}">
+                                            <h5 class="mb-2 text-xl font-semibold">Mô tả ngắn</h5>
+                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta_ngan" id = "description_short" cols="63" rows="5">${product.description_short}</textarea>
+                                            <h5 class="mb-2 text-xl font-semibold">Mô tả dài</h5>
+                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta_dai" id = "description_long" cols="63" rows="5">${product.description_long}</textarea>
                                         </div>
                                     </div>
 
@@ -197,29 +194,73 @@ const EditProduct = {
             data: product
         } = await ProductAPI.read(id);
 
-        console.log(document.forms['form-update-product']['product-image'].files[0])
-
         $('#form-update-product').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const productImage = $('#product-image').files[0];
-            let storageRef = firebase.storage().ref(`images/${productImage.name}`);
-            storageRef.put(productImage).then(function () {
-                console.log('Upload thành công!');
-                storageRef.getDownloadURL().then(async (url) => {
-                    const newProduct = {
-                        ...product,
-                        name: $('#product-name').value,
-                        image: url,
-                        price: $('#price').value,
-                        quantity: $('#quantity').value,
-                        description: $('#description').value,
-                        cate_id: $('#cate-id').value,
-                        status: $('#status').value
-                    };
+            if ($('#product-image').files.length == 0) {
+                const newProduct = {
+                    ...product,
+                    name: $('#product-name').value,
+                    price: $('#price').value,
+                    quantity: $('#quantity').value,
+                    description_short: $('#description_short').value,
+                    description_long: $('#description_long').value,
+                    cate_id: $('#cate-id').value
+                };
+                const {
+                    data: products
+                } = await ProductAPI.list();
+
+                products.map((product) => {
+                    if (product.name == newProduct.name) {
+                        alert("Sản phẩm đã tồn tại")
+                        throw '';
+                    }
+                })
+
+                if (newProduct.name.length == 0) {
+                    alert("Không được để trống dữ liệu")
+                } else {
                     await ProductAPI.update(id, newProduct);
                     window.location.hash = '/list-products';
+                }
+
+            } else {
+                const productImage = $('#product-image').files[0];
+                let storageRef = firebase.storage().ref(`images/${productImage.name}`);
+                storageRef.put(productImage).then(function () {
+                    console.log('Upload thành công!');
+                    storageRef.getDownloadURL().then(async (url) => {
+                        const newProduct = {
+                            ...product,
+                            name: $('#product-name').value,
+                            image: url,
+                            price: $('#price').value,
+                            quantity: $('#quantity').value,
+                            description_short: $('#description_short').value,
+                            description_long: $('#description_long').value,
+                            cate_id: $('#cate-id').value
+                        };
+                        const {
+                            data: products
+                        } = await ProductAPI.list();
+
+                        products.map((product) => {
+                            if (product.name == newProduct.name) {
+                                alert("Sản phẩm đã tồn tại")
+                                throw '';
+                            }
+                        })
+
+                        if (newProduct.name.length == 0) {
+                            alert("Không được để trống dữ liệu")
+                        } else {
+                            await ProductAPI.update(id, newProduct);
+                            window.location.hash = '/list-products';
+                        }
+                    })
                 })
-            })
+            }
+
         })
     }
 };

@@ -32,7 +32,9 @@ const Header = {
                             </button>
                             <!-- ./ Menu Trigger -->
     
-                            <a href="/" class="font-bold text-gray-700 text-2xl">Shop.</a>
+                            <a href="/" class="font-bold text-gray-700 text-2xl">
+                                <img class="w-48" src="https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F%C4%90en%20v%C3%A0%20tr%E1%BA%AFng%20Ki%E1%BA%BFn%20tr%C3%BAc%20Bi%E1%BB%83u%20tr%C6%B0ng.png?alt=media&token=bba9115f-c31f-4a80-b458-53e514f15891" alt="">
+                            </a>
     
                             <div class="hidden md:flex space-x-3 flex-1 lg:ml-8">
                                 <a href="/" class="p-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Trang
@@ -51,7 +53,7 @@ const Header = {
                                 <a href="#"
                                     class="p-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Về Chúng Tôi</a>
                                 
-                                <a href="#"
+                                <a href="/#/contact"
                                     class="p-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Liên Hệ</a>
                             </div>
     

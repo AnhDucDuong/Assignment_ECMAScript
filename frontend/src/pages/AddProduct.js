@@ -157,15 +157,12 @@ const AddProduct = {
                                         </div>
 
                                         <div class="">
-                                            <h5 class="mb-2 text-xl font-semibold">Mô tả:</h5>
-                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta" id = "description" cols="63" rows="5"></textarea>
                                             <h5 class="mb-2 text-xl font-semibold">Ảnh sản phẩm:</h5>
                                             <input class="w-4/5 h-8 mb-6 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" type="file" id="product-image">
-                                            <h5 class="mb-2 text-xl font-semibold">Trạng thái:</h5>
-                                            <div id="status">
-                                                <label class="mb-2 text-base font-medium mr-4"><input class="mr-2" name="status" id="" value="Còn hàng" type="radio" checked>Còn Hàng</label>
-                                                <label class="mb-2 text-base font-medium"><input class="mr-2" name="status" id="" value="Hết hàng" type="radio">Hết hàng</label>
-                                            </div>
+                                            <h5 class="mb-2 text-xl font-semibold">Mô tả ngắn</h5>
+                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta_ngan" id = "description_short" cols="63" rows="5"></textarea>
+                                            <h5 class="mb-2 text-xl font-semibold">Mô tả dài</h5>
+                                            <textarea class="w-4/5 h-32 mb-4 focus:outline-none border border-gray-400 rounded-sm pl-2 bg-white" name="mo_ta_dai" id = "description_long" cols="63" rows="5"></textarea>
                                         </div>
                                     </div>
 
@@ -189,21 +186,35 @@ const AddProduct = {
             const productImage = $('#product-image').files[0];
             let storageRef = firebase.storage().ref(`images/${productImage.name}`);
             storageRef.put(productImage).then(function () {
-                console.log('Upload thành công!');
+                //console.log('Upload thành công!');
                 storageRef.getDownloadURL().then(async (url) => {
-                    const product = {
+                    const addProduct = {
                         id: uuidv4(),
                         name: $('#product-name').value,
                         image: url,
                         price: $('#price').value,
                         quantity: $('#quantity').value,
-                        description: $('#description').value,
-                        cate_id: $('#cate-id').value,
-                        status: $('#status').value
+                        description_short: $('#description_short').value,
+                        description_long: $('#description_long').value,
+                        cate_id: $('#cate-id').value
                     }
-                    //console.log(product);
-                    await ProductAPI.add(product);
-                    window.location.hash = '/list-products';
+                    const {
+                        data: products
+                    } = await ProductAPI.list();
+
+                    products.map((product) => {
+                        if (product.name == addProduct.name) {
+                            alert("Sản phẩm đã tồn tại")
+                            throw '';
+                        }
+                    })
+
+                    if (addProduct.name.length == 0) {
+                        alert("Không được để trống dữ liệu")
+                    } else {
+                        await ProductAPI.add(addProduct);
+                        window.location.hash = '/list-products';
+                    }
                 })
             })
         })

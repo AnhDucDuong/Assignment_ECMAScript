@@ -48,7 +48,6 @@ const SearchProducts = {
 
             return /*html*/ `
                 ${await Header.render()}
-                <h1>Search Products page</h1>
                 <div class="grid grid-rows-1">
                     <div class="grid grid-cols-4">
                         ${result};

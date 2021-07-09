@@ -1,140 +1,83 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Tranh decor số 1 VN",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FCity%20Night%20Lights%20Tumblr%20Banner.png?alt=media&token=ad579c12-36a8-4d0c-b786-7530732abbc7",
-      "price": "5000011",
-      "quantity": "332444",
-      "description": "description 4sdafdsffffdddđ",
-      "cate_id": "f66459fd-8808-4ca7-8a1f-4fc6ee40d031"
-    },
-    {
-      "id": "2",
-      "name": "Tranh canvas",
-      "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
-      "price": 90000,
-      "status": false,
-      "quantity": "quantity 4",
-      "description": "description 4",
-      "cate_id": "85"
-    },
-    {
-      "id": "3",
-      "name": "Tranh treo tường",
-      "image": "https://cf.shopee.vn/file/8966589457f6c8b861c4cb72959e4498",
-      "price": 90000,
-      "status": false,
-      "quantity": "quantity 4",
-      "description": "description 4",
+      "id": "08da0b84-8090-484f-bc05-534aba5fe11c",
+      "name": "Tranh One Piece",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2Fone-piece.jfif?alt=media&token=7e06ca06-436b-4a02-8341-e05a0b171aad",
+      "price": "233333",
+      "quantity": "232",
+      "description_short": "+ Thuộc dòng tranh canvas hiện đại.\n+ Với chất liệu là vải canvas\n+ Có khung viền composite màu đen.",
+      "description_long": "🕓 Chế  độ bảo hành:\n- Bảo hành 1 đổi 1 nếu ảnh bị vỡ nét.\n- Bảo hành tranh 12 tháng không phai màu\n- Có móc treo tranh phía sau + móc treo tranh\n\n🎈 Tranh cực thích hợp để trang trí cho bức tường nhà bạn thêm sinh động.\n\nVà còn rất nhiều tranh One Piece, Naruto, Dragon Ball, Marvel được bán tại shop.\nXem ngay tại: https://shopee.vn/maru.store \n",
       "cate_id": "87"
     },
     {
-      "id": "a86ef07d-91c3-4d6a-8bf0-be51b91c2991",
-      "name": "123456",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608120855.png?alt=media&token=6a1848f0-05df-4aa4-be60-7b79360e35f4",
-      "price": "500000",
-      "quantity": "33",
-      "description": "sdsadsadasd",
-      "cate_id": "df522e91-6380-49d2-b995-c10a50c4e7f0"
+      "id": "95fa616f-9902-45e7-ade4-6acccc287f39",
+      "name": "Tranh zoro",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F197819c9dd9f106da8dd5206bb47723c.jfif?alt=media&token=7a628234-cc8e-4e5e-9d1a-18280b2224e0",
+      "price": "32234",
+      "quantity": "12",
+      "description_short": "+ Thuộc dòng tranh canvas hiện đại. + Với chất liệu là vải canvas + Có khung viền composite màu đen.",
+      "description_long": "🕓 Chế độ bảo hành: - Bảo hành 1 đổi 1 nếu ảnh bị vỡ nét. - Bảo hành tranh 12 tháng không phai màu - Có móc treo tranh phía sau + móc treo tranh 🎈 Tranh cực thích hợp để trang trí cho bức tường nhà bạn thêm sinh động. Và còn rất nhiều tranh One Piece, Naruto, Dragon Ball, Marvel được bán tại shop. Xem ngay tại: https://shopee.vn/maru.store",
+      "cate_id": "87"
     },
     {
-      "id": "9227268e-fe41-4dfd-942c-391936b75136",
-      "name": "Dương Đức Anh",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210526234017.png?alt=media&token=4fa4e3d1-cfe7-442b-976f-eefedf4259f2",
+      "id": "aa533719-87d9-4b2c-b5d9-fad5e86273a4",
+      "name": "Tranh Luffy",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F215fb6c62a39681277be81777bd02936.jfif?alt=media&token=230adea0-fddc-4167-a038-7844a39b5d88",
+      "price": "212",
+      "quantity": "12",
+      "description_short": "+ Thuộc dòng tranh canvas hiện đại. + Với chất liệu là vải canvas + Có khung viền composite màu đen.",
+      "description_long": "🕓 Chế độ bảo hành: - Bảo hành 1 đổi 1 nếu ảnh bị vỡ nét. - Bảo hành tranh 12 tháng không phai màu - Có móc treo tranh phía sau + móc treo tranh 🎈 Tranh cực thích hợp để trang trí cho bức tường nhà bạn thêm sinh động. Và còn rất nhiều tranh One Piece, Naruto, Dragon Ball, Marvel được bán tại shop. Xem ngay tại: https://shopee.vn/maru.store",
+      "cate_id": "85"
+    },
+    {
+      "id": "83e861a2-d21c-4c6a-b244-abb58380501a",
+      "name": "Tranh ba anh em",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2Faaea01d172512dc6ba2fd57286e06200.jfif?alt=media&token=aec320f1-375c-4e5f-be21-41a5e6a0eda4",
       "price": "500000",
-      "quantity": "333",
-      "description": "ssssssss",
+      "quantity": "324",
+      "description_short": "+ Thuộc dòng tranh canvas hiện đại. + Với chất liệu là vải canvas + Có khung viền composite màu đen.",
+      "description_long": "🕓 Chế độ bảo hành: - Bảo hành 1 đổi 1 nếu ảnh bị vỡ nét. - Bảo hành tranh 12 tháng không phai màu - Có móc treo tranh phía sau + móc treo tranh 🎈 Tranh cực thích hợp để trang trí cho bức tường nhà bạn thêm sinh động. Và còn rất nhiều tranh One Piece, Naruto, Dragon Ball, Marvel được bán tại shop. Xem ngay tại: https://shopee.vn/maru.store",
+      "cate_id": "85"
+    },
+    {
+      "id": "85769063-79bf-45b3-af27-560a86b1dff9",
+      "name": "Tranh Batman",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F476ee81991e585dafd973f4c6a0fde9f.jfif?alt=media&token=1b7c185e-6cf9-4365-b402-7e7317a4d535",
+      "price": "500000",
+      "quantity": "435",
+      "description_short": "+ Thuộc dòng tranh canvas hiện đại. + Với chất liệu là vải canvas + Có khung viền composite màu đen.",
+      "description_long": "🕓 Chế độ bảo hành: - Bảo hành 1 đổi 1 nếu ảnh bị vỡ nét. - Bảo hành tranh 12 tháng không phai màu - Có móc treo tranh phía sau + móc treo tranh 🎈 Tranh cực thích hợp để trang trí cho bức tường nhà bạn thêm sinh động. Và còn rất nhiều tranh One Piece, Naruto, Dragon Ball, Marvel được bán tại shop. Xem ngay tại: https://shopee.vn/maru.store",
+      "cate_id": "87"
+    },
+    {
+      "id": "5debbf58-9ca8-443d-9c67-fcd6d402f227",
+      "name": "Lót bàn làm việc",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F727b3480b3aa4a94ab87b9b4308fdb35.jfif?alt=media&token=44ca4afe-0a92-4454-917e-adb5077385e5",
+      "price": "50000",
+      "quantity": "1111",
+      "description_short": "* NHIỀU KÍCH THƯỚC :\n+ 30x60\n+ 40x80\n+ 50x90\n+  50x100\n+ 60×120",
+      "description_long": "*/Tấm lót bàn làm việc bằng da chống nước, chống trầy, nhiều kích cỡ lớn, nhiều màu cao cấp\n*/Tấm lót bàn làm việc là phụ kiện cần thiết của các bạn nhân viên văn phòng hay phải ngồi máy tính suốt cả ngày để làm việc, chơi game, học tập, lướt web, ...ngoài mục đích trang trí cho bàn làm việc mà còn cho bạn không gian làm việc tốt nhất và là món quà tặng lý tưởng cho những người bạn quan tâm.\n\nLưu ý khi mua: Bạn hãy đo kích thước bàn làm việc của mình và chọn kích thước tấm lót phù hợp nhất. \nMiếng lót bằng chất liệu da PU nguyên miếng cao cấp đã được sử lí sạch, có độ bền cao, không hề khó chịu, mặt trên mịn với vân chìm tạo cảm giác thoải mái khi dùng, đặc biệt có phủ lớp dầu giúp chống nước khi vô tình bị đổ hay tràn nước, không bị trầy xước khi va vào các vật sắc nhọn như mũi dao, chìa khóa, .. chống ẩm mốc, chống xé rách, chống trầy xước và giúp tản nhiệt cho máy tính của bạn.\nMặt dưới của miếng lót máy tính là lớp bông mịn êm, gúp bám chắc vào mặt bàn, không bị trơn tuột.\n",
       "cate_id": "2b6abca2-5980-48c2-9c3a-49e02c63ca82"
     },
     {
-      "id": "cd503ba5-54e0-4ded-ade9-d3f075a49843",
-      "name": "Decor home",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608084512.png?alt=media&token=66080b03-d30d-43a9-a5bc-9b82a2a059a0",
+      "id": "78d96cf2-cf5f-4fda-b671-a7ed9cccded6",
+      "name": "Đèn ngủ decor",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F189d35e8ab2226297132591f75847a1b.jfif?alt=media&token=ca8a577e-a7c5-4bc5-b1f9-49055bdb8f7c",
       "price": "500000",
-      "quantity": "32423",
-      "description": "sdfasdfsa",
+      "quantity": "32",
+      "description_short": "_Chiều cao đèn: 43cm\n_Đường kính đèn: 37cm \n_Cân nặng: 1kg\n_Màu sắc: đen, trắng, xanh, xám, hồng",
+      "description_long": "Đèn bàn học tập, làm việc thiết kể theo phong cách vintage\nThân đèn làm bằng gỗ kết hợp kim loại sơn tĩnh điện\nKích thước: 43cm * 37cm\nMàu sắc: Đen, trắng, xám, xanh, hồng\n\nĐèn bàn học tập, làm việc, đèn decor phong cách Vintage\n\nĐèn được thiết kế độc đáo, sáng tạo.\n\nThân đèn được làm bằng gỗ kết hợp kim loại sơn tĩnh điện chống gỉ 100%\n\nThông tin chi tết:\n\n_Chiều cao đèn: 43cm\n\n_Đường kính đèn: 37cm \n\n_Cân nặng: 1kg\n\n_Màu sắc: đen, trắng, xanh, xám, hồng\nỨng dụng: để bàn làm việc, bàn học, đọc sách, trang trí nhà cửa, đèn ngủ, quán cafe\nSản phẩm đã bao gồm 1 bóng led 5w\nThời gian giao hàng: Miền Bắc 1-3 ngày, miền Trung 2-4 ngày, miền Nam 3-5 ngày\n\nQuý khách chọn màu sản phẩm trong phẩm phân loại hàng. Nhân viên bên shop sẽ gọi xác nhận về số lượng và màu sắc sản phẩm trước khi gửi hàng.",
       "cate_id": "4ddf8226-5b69-4c1f-bca2-bdf8426c5bc2"
     },
     {
-      "id": "efd65457-57b4-4c8f-be2d-db27627995d2",
-      "name": "hihi",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608075627.png?alt=media&token=69021525-9e10-462a-bbcd-b1f48f312869",
+      "id": "c25a2ae1-601f-4438-9607-a276a9182774",
+      "name": "Kệ màn hình PC",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F7032563625203ec8ee89e8de1cda54a3.jfif?alt=media&token=3afa20c4-a491-4083-a9bf-803ceed97c8c",
       "price": "500000",
-      "quantity": "33",
-      "description": "ádadasda",
-      "cate_id": "4ddf8226-5b69-4c1f-bca2-bdf8426c5bc2"
-    },
-    {
-      "id": "09792527-ed18-4656-a4e0-a96b1cf5f0aa",
-      "name": "Dương Đức Anh123",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210601122654.png?alt=media&token=6642ed89-2c30-4938-84d5-8daa3b8cbe55",
-      "price": "500000",
-      "quantity": "423432",
-      "description": "dsfsdfdsfd",
-      "cate_id": "997deb50-5074-4d27-8f02-e62fdb56b4a5"
-    },
-    {
-      "id": "2a206e64-2f6d-484a-8655-86610176abe4",
-      "name": "Decor home",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608121118.png?alt=media&token=99e27be1-9910-4075-886d-f20aa25f4fd6",
-      "price": "500000",
-      "quantity": "3242",
-      "description": "dsafds",
-      "cate_id": "997deb50-5074-4d27-8f02-e62fdb56b4a5"
-    },
-    {
-      "id": "41e3a34d-031f-4eb5-bff8-d1ba2ffd4ec3",
-      "name": "Sản phẩm mới",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608075512.png?alt=media&token=1048d1fa-39c0-4849-88f6-d637308b0af6",
-      "price": "222",
-      "quantity": "444",
-      "description": "dfsdfsd",
-      "cate_id": "85"
-    },
-    {
-      "id": "41e650e5-e1a4-44ca-8d58-86d4c0a0e4db",
-      "name": "Sản phẩm mới 2 vừa được thêm",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608124531.png?alt=media&token=7d17cc72-8497-48ee-8ad3-46ff5dbbfc7c",
-      "price": "500000",
-      "quantity": "333",
-      "description": "dâsda",
-      "cate_id": "e5b06e3f-583c-478e-933e-23c758c63efc"
-    },
-    {
-      "id": "ea558cca-b5f3-4170-ad62-37635f270802",
-      "name": "New",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608132050.png?alt=media&token=1f786bbb-2ff7-4ec2-bb6e-178d40872b1a",
-      "price": "23000000",
-      "quantity": "50",
-      "description": "Note: <input type=\"number\"> (and other types, such as range and date) can also take a step attribute, which specifies what increment the value will go up or down by when the input controls are used (such as the up and down number buttons). In the above example we've not included a step attribute, so the value defaults to 1. This means that floats, like 3.2, will also show as invalid.",
-      "cate_id": "85"
-    },
-    {
-      "id": "a7c3d887-fdad-4f8a-9178-7ff90fffdfe7",
-      "name": "Dương Đức Anh 123 456",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210612075748.png?alt=media&token=dc9b76e8-4acf-4f58-ba7e-6b52a880b1c2",
-      "price": "2345678988",
-      "quantity": "2222222",
-      "description": "Sự hưng phấn của Anh giúp họ tạo ra hàng loạt cơ hội ngon ăn, đặc biệt là cú cứa lòng đưa bóng chạm cột dọc của Phil Foden hay cú sút quyết đoán ngoài vòng cấm của Phillips khiến thủ môn Livakovic vất vả cứu thua.1\n\nSau 15 phút đầu lép vé, Croatia cố gắng lấy lại thế trận và họ dễ thở hơn khi Anh không còn tấn công dồn dập như trước nữa. Croatia bắt đầu tổ chức vài cuộc phản công và Perisic suýt chút nữa làm nên chuyện nếu anh tỉnh táo và không quá vội vàng. Phút 26, từ quả tạt bóng vào, Perisic dứt điểm ngay nhưng cú sút của anh lại đi không chính xác.\n\nNhững phút cuối hiệp 1, Anh vẫn là đội cầm bóng nhiều hơn nhưng họ không còn tạo ra quá nhiều sức ép cũng như các cơ hội như những phút đầu trận. Hiệp 1 kết thúc với tỉ số 0-0.\nahihi",
-      "cate_id": "4ddf8226-5b69-4c1f-bca2-bdf8426c5bc2"
-    },
-    {
-      "id": "267c9e77-3736-47c2-a444-fc2cbe7f08b7",
-      "name": "test1",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210526233558.png?alt=media&token=dedc2d25-dac6-40e5-9feb-3b589ace5067",
-      "price": "500000",
-      "quantity": "22",
-      "description": "234567fdsgfgfdgf",
-      "cate_id": "85"
-    },
-    {
-      "id": "963ca149-aa2b-4b50-98f4-86fc9d70aad6",
-      "name": "test2dsaf",
-      "image": "https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FScreenShot_20210608075617.png?alt=media&token=1ec44d12-20ff-43cf-a40e-69d3d79ecc65",
-      "price": "500000333",
-      "quantity": "222333",
-      "description": "fdsafasdfdssdffdsfds",
+      "quantity": "23",
+      "description_short": "*Tên sản phẩm: Kệ Màn Hình Máy Tính Monitor Stand Plyconcept \n*Chất liệu: Plywood (Gỗ ván ép uốn cong nguyên khối)\n*Kích Thước: PLC 492095 Ngang 490mm x sâu 200mm x cao 95mm, dày 12 mm\n                      PLC 512010  Ngang 510mm x sâu 200mm x cao 95mm, dày 12 mm\n                      PLC 8022510  Ngang 800mm x sâu 225mm x cao 100mm, dày 12 mm\n*Chịu lực: 70kg max",
+      "description_long": "Các bạn làm việc văn phòng rất hay gặp vấn đề về cổ vai gáy do phải cúi nhìn màn hình trong thời gian dài. Thấu hiểu điều đó, chúng tôi mang đến sản phẩm Kệ Màn Hình Máy Tính Monitor Stand. Sản phẩm sẽ giúp các bạn:\n\n01. Nâng màn hình Desktop hoặc Imac lên vừa tầm mắt giúp bạn có tư thế ngồi thẳng đúng theo tỉ lệ an toàn cho cột sống.\n02. Xếp gọn bàn phím, chuột khi không sử dụng dưới Kệ Màn Hình, giúp bàn làm việc luôn gọn gàng sạch sẽ.\n03. Set up và nâng cấp bàn làm việc, mang lại không gian tiện nghi thoải mái, nâng tầm trải nghiệm, thỏa sức sáng tạo trong công việc.\n\nKệ Màn Hình Manitor Stand Imac bằng gỗ uốn cong độc đáo kết hợp cùng Thảm Da Trải Bàn Làm Việc bằng da PU( mời các bạn tham khảo trong shop) là một set đồ thẩm mỹ sang trọng nâng tầm bàn làm việc của bạn.\n\nChính sách đổi trả\nKhi nhận hang phát hiện lỗi do nhà sản xuất, vận chuyển hoặc không đúng chúng loại yêu cầu, các bạn đừng ngần ngại liên hệ ngay với shop để được hỗ trợ đổi trả kịp thời.",
       "cate_id": "fa79f55f-3b9e-46fb-93d5-b9bedc61522d"
     }
   ],
@@ -181,15 +124,7 @@
     },
     {
       "id": "e5b06e3f-583c-478e-933e-23c758c63efc",
-      "name": "Danh mục mới số 1 VN"
-    },
-    {
-      "name": "TestPostMan",
-      "id": "VRRdqvR"
-    },
-    {
-      "name": "DATEST123",
-      "id": "BSdXcmf"
+      "name": "Nến thơm"
     }
   ]
 }

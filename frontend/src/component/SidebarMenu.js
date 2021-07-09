@@ -1,8 +1,3 @@
-import {
-    parseRequestUrl,
-    $
-} from '../pages/utils';
-
 const SidebarMenu = {
     render() {
         /*const {

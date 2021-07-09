@@ -5,7 +5,7 @@ const Footer = {
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-4 text-gray-900 flex flex-wrap justify-left">
                     <!-- Col-1 -->
                     <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
-                        <img class="w-48" src="https://i0.wp.com/s1.uphinh.org/2021/05/23/4459394254_7b2ef1d4-da8b-46bd-a831-f1500ecad819.png" alt="">
+                        <img class="w-48" src="https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2F%C4%90en%20v%C3%A0%20tr%E1%BA%AFng%20Ki%E1%BA%BFn%20tr%C3%BAc%20Bi%E1%BB%83u%20tr%C6%B0ng.png?alt=media&token=bba9115f-c31f-4a80-b458-53e514f15891" alt="">
                     </div>
             
                     <!-- Col-2 -->

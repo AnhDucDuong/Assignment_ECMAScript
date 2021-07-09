@@ -89,7 +89,7 @@ const ProductDetail = {
                             </a>
                         </span>
                         </div>
-                        <p class="leading-relaxed">${product.description}</p>
+                        <p class="leading-relaxed">${product.description_short}</p>
                         <!--<div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                             <div class="flex">
                                 <span class="mr-3">Color</span>
@@ -138,7 +138,7 @@ const ProductDetail = {
                     </div>
 
                     <p class="text-gray-500 text-lg">
-                        ${product.description}
+                        ${product.description_long}
                     </p>
                 </div>
                 <!--Mô tả chi tiết-->
