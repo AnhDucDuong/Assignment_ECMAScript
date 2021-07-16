@@ -27,13 +27,13 @@ export const create = (req, res) => {
         //1kb = 1000 bit
         //1mb = 100000 bit
         if (files.photo) {
-            if (files.photo.size > 100000) {
+            if (files.photo.size > 200000) {
                 res.status(400).json({
                     error: "Bạn nên upload ảnh dưới 1mb"
                 })
             }
             product.photo.data = fs.readFileSync(files.photo.path);
-            product.photo.contentType = files.photo.path;
+            product.photo.contentType = files.photo.type;
         }
 
         product.save((err, data) => {
@@ -79,14 +79,16 @@ export const remove = (req, res) => {
 }
 
 export const list = (req, res) => {
-    Product.find((err, data) => {
-        if (err) {
-            return res.status(400).json({
-                error: "Không có sản phẩm nào"
-            })
-        }
-        res.json(data)
-    })
+    Product.find()
+        .select("-photo")
+        .exec((err, data) => {
+            if (err) {
+                return res.status(400).json({
+                    error: "Không có sản phẩm nào"
+                })
+            }
+            res.json(data)
+        })
 }
 
 export const update = (req, res) => {

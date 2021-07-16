@@ -154,9 +154,11 @@ const AddCategory = {
                 name: $('#category-name').value,
             }
             //console.log(newCategory.name);
+
             const {
                 data: categories
             } = await CategoryAPI.list();
+            //console.log(categories)
 
             categories.map((category) => {
                 if (category.name == newCategory.name) {
@@ -168,7 +170,7 @@ const AddCategory = {
             if (newCategory.name.length == 0) {
                 alert("Không được để trống dữ liệu")
             } else {
-                await CategoryAPI.add(newCategory);
+                await CategoryAPI.create(newCategory);
                 window.location.hash = '/list-categories';
             }
         })

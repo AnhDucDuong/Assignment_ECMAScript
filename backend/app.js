@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose'
+import cors from 'cors';
 
 const app = express();
 
@@ -9,6 +10,7 @@ dotenv.config();
 
 const productRoutes = require('./routes/product');
 const categoryRoutes = require('./routes/category');
+const authRoutes = require('./routes/auth');
 
 //DB connection
 mongoose.connect(
@@ -27,10 +29,15 @@ mongoose.connection.on('error', err => {
 
 //Middleware
 app.use(express.json());
+app.use(cors({
+    credentials: 'same-origin'
+}));
 
 //Routes Middleware
 app.use('/api', productRoutes);
 app.use('/api', categoryRoutes);
+app.use('/api', authRoutes);
+
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {

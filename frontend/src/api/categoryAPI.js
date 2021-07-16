@@ -3,28 +3,33 @@ import {
 } from "./axiosClient";
 
 const CategoryAPI = {
-    list() {
-        const url = `/categories`;
-        return axiosClient.get(url)
+    categoryById() {
+        const url = `categoryId`;
+        return axiosClient.param(url)
     },
 
-    read(id) {
-        const url = `/categories/${id}`;
-        return axiosClient.get(url)
-    },
-
-    remove(id) {
-        const url = `/categories/${id}`;
-        return axiosClient.delete(url)
-    },
-
-    add(category) {
-        const url = `/categories`;
+    create(category) {
+        const url = `/category`;
         return axiosClient.post(url, category)
     },
 
-    update(id, data) {
-        const url = `/categories/${id}`;
+    list() {
+        const url = `/category`;
+        return axiosClient.get(url)
+    },
+
+    read(categoryId) {
+        const url = `/category/${categoryId}`;
+        return axiosClient.get(url)
+    },
+
+    remove(categoryId) {
+        const url = `/category/${categoryId}`;
+        return axiosClient.delete(url)
+    },
+
+    update(categoryId, data) {
+        const url = `/category/${categoryId}`;
         return axiosClient.put(url, data)
     }
 }

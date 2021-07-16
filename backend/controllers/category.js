@@ -3,33 +3,14 @@ import formidable from 'formidable'
 import _ from 'lodash'
 
 export const create = (req, res) => {
-    let form = new formidable.IncomingForm();
-    form.keepExtension = true;
-    form.parse(req, (err, fields) => {
+    const category = new Category(req.body);
+    category.save((err, data) => {
         if (err) {
             return res.status(400).json({
                 error: "Không thêm được danh mục"
             })
         }
-
-        const {
-            name
-        } = fields;
-        if (!name) {
-            return res.status(400).json({
-                error: "Bạn chưa điền đủ thông tin"
-            })
-        }
-
-        let category = new Category(fields);
-        category.save((err, data) => {
-            if (err) {
-                return res.status(400).json({
-                    error: "Không thêm được danh mục"
-                })
-            }
-            res.json(data);
-        })
+        res.json(data);
     })
 }
 
@@ -78,35 +59,14 @@ export const list = (req, res) => {
 }
 
 export const update = (req, res) => {
-    let form = new formidable.IncomingForm();
-    form.keepExtension = true;
-    form.parse(req, (err, fields) => {
+    const category = req.category;
+    category.name = req.body.name;
+    category.save((err, data) => {
         if (err) {
             return res.status(400).json({
-                error: "Không sửa được danh mục"
+                error: "Không thể sửa danh mục"
             })
         }
-
-        const {
-            name
-        } = fields;
-        if (!name) {
-            return res.status(400).json({
-                error: "Bạn chưa điền đủ thông tin"
-            })
-        }
-
-        //let category = new Category(fields);
-        let category = req.category;
-        category = _.assignIn(category, fields);
-
-        category.save((err, data) => {
-            if (err) {
-                return res.status(400).json({
-                    error: "Không sửa được danh mục"
-                })
-            }
-            res.json(data);
-        })
-    })
+        res.json(data);
+    });
 }

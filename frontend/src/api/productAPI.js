@@ -18,7 +18,7 @@ const ProductAPI = {
         return axiosClient.get(url)
     },
 
-    add(product) {
+    create(product) {
         const url = `/products`;
         return axiosClient.post(url, product)
     },

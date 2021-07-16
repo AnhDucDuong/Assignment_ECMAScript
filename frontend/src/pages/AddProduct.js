@@ -212,7 +212,7 @@ const AddProduct = {
                     if (addProduct.name.length == 0) {
                         alert("Không được để trống dữ liệu")
                     } else {
-                        await ProductAPI.add(addProduct);
+                        await ProductAPI.create(addProduct);
                         window.location.hash = '/list-products';
                     }
                 })
