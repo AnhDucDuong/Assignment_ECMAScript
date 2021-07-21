@@ -4,6 +4,16 @@ import fs from 'fs'
 import _ from 'lodash'
 
 export const create = (req, res) => {
+    const product = new Category(req.body);
+    product.save((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Không thêm được sản phẩm"
+            })
+        }
+        res.json(data)
+    })
+    /*
     let form = new formidable.IncomingForm();
     form.keepExtension = true;
     form.parse(req, (err, fields, files) => {
@@ -45,6 +55,7 @@ export const create = (req, res) => {
             res.json(data)
         })
     });
+    */
 }
 
 export const productById = (req, res, next, id) => {

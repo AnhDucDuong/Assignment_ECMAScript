@@ -17,8 +17,9 @@ const ProductDetail = {
         const {
             data: products
         } = await ProductAPI.list();
+        //console.log(products)
 
-        const result = products.filter(product_cate => product_cate.cate_id == product.cate_id).map(product_cate => {
+        const result = products.filter(product_cate => product_cate.category == product.category).map(product_cate => {
             return `
                 <a href="/#/products/${product_cate.id}" class="justify-center items-center">
                     <div class="p-4 w-96">
@@ -138,7 +139,7 @@ const ProductDetail = {
                     </div>
 
                     <p class="text-gray-500 text-lg">
-                        ${product.description_long}
+                        ${product.description}
                     </p>
                 </div>
                 <!--Mô tả chi tiết-->

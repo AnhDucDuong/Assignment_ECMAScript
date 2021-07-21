@@ -14,10 +14,11 @@ const Category = {
         const {
             data: products
         } = await ProductAPI.list();
+        //console.log(products)
 
-        const result = products.filter(product => product.cate_id == id).map(product => {
+        const result = products.filter(product => product.category == id).map(product => {
             return /*html*/ `
-                    <a href="/#/products/${product.id}" class="justify-center items-center">
+                    <a href="/#/products/${product._id}" class="justify-center items-center">
                         <div class="p-4">
                             <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                                 <div class="prod-title">

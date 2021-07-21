@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose'
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
 const app = express();
@@ -11,6 +12,7 @@ dotenv.config();
 const productRoutes = require('./routes/product');
 const categoryRoutes = require('./routes/category');
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 //DB connection
 mongoose.connect(
@@ -29,6 +31,7 @@ mongoose.connection.on('error', err => {
 
 //Middleware
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors({
     credentials: 'same-origin'
 }));
@@ -37,6 +40,7 @@ app.use(cors({
 app.use('/api', productRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', authRoutes);
+app.use('/api', userRoutes);
 
 
 const port = process.env.PORT || 8000

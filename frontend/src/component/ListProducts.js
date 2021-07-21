@@ -86,8 +86,8 @@ const ListProducts = {
 
                                     <td
                                         class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                        <a href="/#/edit-product/${product.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                        <button data-id="${product.id}" class="btn ml-6 text-red-600 hover:text-red-700 font-semibold focus:outline-none">Remove</button>
+                                        <a href="/#/edit-product/${product._id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                        <button data-id="${product._id}" class="btn ml-6 text-red-600 hover:text-red-700 font-semibold focus:outline-none">Remove</button>
                                     </td>
                                 </tr>
                             `

@@ -3,18 +3,23 @@ import {
 } from "./axiosClient";
 
 const ProductAPI = {
+    productById() {
+        const url = `productId`;
+        return axiosClient.param(url)
+    },
+
     list() {
         const url = `/products`;
         return axiosClient.get(url)
     },
 
-    search(id) {
-        const url = `/products?name_like=${id}`;
+    search(productId) {
+        const url = `/products?name_like=${productId}`;
         return axiosClient.get(url)
     },
 
-    read(id) {
-        const url = `/products/${id}`;
+    read(productId) {
+        const url = `/products/${productId}`;
         return axiosClient.get(url)
     },
 
@@ -23,13 +28,13 @@ const ProductAPI = {
         return axiosClient.post(url, product)
     },
 
-    remove(id) {
-        const url = `/products/${id}`;
+    remove(productId) {
+        const url = `/products/${productId}`;
         return axiosClient.delete(url)
     },
 
-    update(id, data) {
-        const url = `/products/${id}`;
+    update(productId, data) {
+        const url = `/products/${productId}`;
         return axiosClient.put(url, data)
     }
 }
