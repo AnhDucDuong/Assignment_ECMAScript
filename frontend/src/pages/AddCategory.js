@@ -150,7 +150,6 @@ const AddCategory = {
         $('#form-add').addEventListener('submit', async e => {
             e.preventDefault();
             const newCategory = {
-                id: uuidv4(),
                 name: $('#category-name').value,
             }
             //console.log(newCategory.name);

@@ -19,9 +19,9 @@ const ProductDetail = {
         } = await ProductAPI.list();
         //console.log(products)
 
-        const result = products.filter(product_cate => product_cate.category == product.category).map(product_cate => {
-            return `
-                <a href="/#/products/${product_cate.id}" class="justify-center items-center">
+        const result = products.filter(product_cate => product_cate.cate_id == product.cate_id).map(product_cate => {
+            return /*html*/ `
+                <a href="/#/products/${product_cate._id}" class="justify-center items-center">
                     <div class="p-4 w-96">
                         <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                             <div class="prod-title">
@@ -47,8 +47,8 @@ const ProductDetail = {
         return /*html*/ `
             ${await Header.render()}
             <section class="text-gray-600 body-font overflow-hidden">
-                <div class="container px-5 py-8 mx-auto">
-                    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                <div class="px-36 py-8 mx-auto">
+                    <div class="mx-auto flex flex-wrap">
                     <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="${product.image}">
                     <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                         <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">${product.name}</h1>
@@ -129,7 +129,7 @@ const ProductDetail = {
                 </div>
             </section>
 
-            <section class="container mx-auto px-36 flex justify-between text-gray-600">
+            <section class="mx-auto px-36 flex justify-between text-gray-600">
                 <div class="max-w-3xl">
                     <div class="mb-4">
                         <h1 class="font-normal text-4xl mb-1">Mô tả sản phẩm</h1>
@@ -139,7 +139,7 @@ const ProductDetail = {
                     </div>
 
                     <p class="text-gray-500 text-lg">
-                        ${product.description}
+                        ${product.description_long}
                     </p>
                 </div>
                 <!--Mô tả chi tiết-->

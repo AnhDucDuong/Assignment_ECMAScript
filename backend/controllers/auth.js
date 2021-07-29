@@ -5,6 +5,18 @@ import jwt from 'jsonwebtoken'
 const expressJwt = require('express-jwt');
 
 export const signup = (req, res) => {
+    const user = new User(req.body);
+    user.save((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Đăng ký tài khoản không thành công"
+            })
+        }
+        user.salt = undefined;
+        user.hashed_password = undefined;
+        res.json(data)
+    })
+    /*
     let form = new formidable.IncomingForm();
     form.keepExtension = true;
     form.parse(req, (err, field) => {
@@ -39,7 +51,7 @@ export const signup = (req, res) => {
             user.hashed_password = undefined;
             res.json(data)
         })
-    });
+    });*/
 };
 
 export const signin = (req, res) => {

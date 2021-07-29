@@ -2,7 +2,8 @@ import express from 'express';
 const router = express.Router();
 import {
     userById,
-    read
+    read,
+    list
 } from '../controllers/user';
 import {
     requireSignin,
@@ -18,6 +19,7 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
         user: req.profile
     })
 });
+router.get('/user', list); //Danh sách users
 router.get('/user/:userId', requireSignin, isAuth, read);
 
 

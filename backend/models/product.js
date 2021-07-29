@@ -10,34 +10,38 @@ const productSchema = new mongoose.Schema({
         required: true,
         maxlength: 32
     },
-    category: {
-        type: ObjectId,
-        ref: "Category",
-        required: true
-    },
-    description: {
+    image: {
         type: String,
-        required: true,
-        maxlength: 2000
+        required: true
     },
     price: {
         type: Number,
         required: true,
         maxlength: 10
     },
-    photo: {
-        data: Buffer,
-        contentType: String
-    },
     quantity: {
         type: Number,
+    },
+    description_long: {
+        type: String,
+        required: true,
+        maxlength: 2000
+    },
+    description_short: {
+        type: String,
+        required: true,
+        maxlength: 2000
+    },
+    cate_id: {
+        type: ObjectId,
+        ref: "Category",
+        required: true
     },
     sold: {
         type: Number,
         default: 0
     },
     shipping: {
-        required: true,
         type: Boolean
     }
 }, {

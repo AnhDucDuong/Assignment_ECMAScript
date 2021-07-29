@@ -24,7 +24,7 @@ const AddProduct = {
         return /*html*/ `
             <div>
                 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-                
+
                 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
                     ${SidebarMenu.render()}
 
@@ -189,7 +189,6 @@ const AddProduct = {
                 //console.log('Upload thành công!');
                 storageRef.getDownloadURL().then(async (url) => {
                     const addProduct = {
-                        id: uuidv4(),
                         name: $('#product-name').value,
                         image: url,
                         price: $('#price').value,

@@ -4,7 +4,8 @@ import fs from 'fs'
 import _ from 'lodash'
 
 export const create = (req, res) => {
-    const product = new Category(req.body);
+    const product = new Product(req.body);
+    //console.log(product)
     product.save((err, data) => {
         if (err) {
             return res.status(400).json({
@@ -13,6 +14,7 @@ export const create = (req, res) => {
         }
         res.json(data)
     })
+
     /*
     let form = new formidable.IncomingForm();
     form.keepExtension = true;
@@ -90,20 +92,29 @@ export const remove = (req, res) => {
 }
 
 export const list = (req, res) => {
-    Product.find()
-        .select("-photo")
-        .exec((err, data) => {
-            if (err) {
-                return res.status(400).json({
-                    error: "Không có sản phẩm nào"
-                })
-            }
-            res.json(data)
-        })
+    Product.find().exec((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Không có sản phẩm nào"
+            })
+        }
+        res.json(data)
+    })
 }
 
 export const update = (req, res) => {
-    let form = new formidable.IncomingForm();
+    const product = Product(req.body);
+    console.log(product)
+    product.save((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Không thêm được sản phẩm"
+            })
+        }
+        res.json(data)
+    })
+
+    /*let form = new formidable.IncomingForm();
     form.keepExtension = true;
     form.parse(req, (err, fields, files) => {
         if (err) {
@@ -144,5 +155,5 @@ export const update = (req, res) => {
             }
             res.json(data)
         })
-    });
+    });*/
 }

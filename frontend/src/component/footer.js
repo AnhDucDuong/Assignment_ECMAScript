@@ -66,16 +66,16 @@ const Footer = {
                         </div>
             
                         <!-- Links -->
-                        <a href="#" class="my-3 block hover:text-gray-100 text-sm font-medium duration-700">
+                        <a href="#" class="my-3 block hover:text-gray-400 text-sm font-medium duration-700">
                             Miễn phí vận chuyển
                         </a>
-                        <a href="#" class="my-3 block hover:text-gray-100 text-sm font-medium duration-700">
+                        <a href="#" class="my-3 block hover:text-gray-400 text-sm font-medium duration-700">
                             Nhận đổi trả hàng
                         </a>
-                        <a href="#" class="my-3 block hover:text-gray-100 text-sm font-medium duration-700">
+                        <a href="#" class="my-3 block hover:text-gray-400 text-sm font-medium duration-700">
                             Chăm sóc khách hàng 24/7
                         </a>
-                        <a href="#" class="my-3 block hover:text-gray-100 text-sm font-medium duration-700">
+                        <a href="#" class="my-3 block hover:text-gray-400 text-sm font-medium duration-700">
                             Bảo hành trọn đời
                         </a>
                     </div>
@@ -98,7 +98,7 @@ const Footer = {
                 <div class="pt-2">
                     <div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-4 text-gray-900 border-t border-gray-900">
                         <div class="">
-                            Copyright © 2021 by tuonggoonline.com
+                            Copyright © 2021 by greendecor.com
                         </div>
                     </div>
                 </div>

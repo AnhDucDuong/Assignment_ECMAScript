@@ -13,8 +13,8 @@ const ProductAPI = {
         return axiosClient.get(url)
     },
 
-    search(productId) {
-        const url = `/products?name_like=${productId}`;
+    search(keyword) {
+        const url = `/products?name_like=${keyword}`;
         return axiosClient.get(url)
     },
 

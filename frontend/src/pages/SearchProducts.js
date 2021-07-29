@@ -48,6 +48,9 @@ const SearchProducts = {
 
             return /*html*/ `
                 ${await Header.render()}
+
+                <img src="https://firebasestorage.googleapis.com/v0/b/ecmascript-7a6e3.appspot.com/o/images%2FCity%20Night%20Lights%20Tumblr%20Banner.png?alt=media&token=3ee4096b-04af-4c9e-bd00-d09fc6d85213" class="">
+
                 <div class="grid grid-rows-1">
                     <div class="grid grid-cols-4">
                         ${result};
