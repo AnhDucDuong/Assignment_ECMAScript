@@ -18,6 +18,11 @@ const UserAPI = {
         return axiosClient.post(url, user)
     },
 
+    signout() {
+        const url = `/signout`;
+        return axiosClient.get(url)
+    },
+
     list() {
         const url = `/user`;
         return axiosClient.get(url)

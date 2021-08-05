@@ -43,8 +43,6 @@ export const remove = (req, res) => {
             message: "Danh mục đã được xóa thành công"
         })
     })
-
-
 }
 
 export const list = (req, res) => {

@@ -3,7 +3,7 @@ import Header from "../component/header";
 
 const Contact = {
     async render() {
-        return `
+        return /*html*/ `
             ${await Header.render()}
             <section class="mx-auto bg-white">
             <!-- Breadcrumbs -->

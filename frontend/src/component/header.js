@@ -1,8 +1,11 @@
 import CategoryAPI from "../api/categoryAPI";
 import UserAPI from "../api/userAPI";
 import {
-    $
+    $,
+    reRender,
+    parseRequestUrl
 } from '../pages/utils';
+import Cart from "./Cart";
 import Signin from "./Signin";
 
 const Header = {
@@ -43,7 +46,7 @@ const Header = {
     
                                 <div class="group relative">
                                     <a href="/#/products" class="inline-block p-2 hover:bg-gray-100 rounded-lg text-gray-600 hover:text-gray-800">Sản Phẩm</a>
-                                    <ul class="absolute left-0 bg-gray-300 w-max border border-gray-400 mt-14 opacity-0 invisible group-hover:opacity-95 group-hover:visible group-hover:mt-0 transition-all duration-500">
+                                    <ul class="absolute left-0 bg-gray-300 w-max border border-gray-400 shadow-2xl mt-14 opacity-0 invisible group-hover:opacity-95 group-hover:visible group-hover:mt-0 transition-all duration-500">
                                         ${result}
                                     </ul>
                                 </div>
@@ -70,24 +73,24 @@ const Header = {
                                     </svg>
                                 </div>
     
-                                <button 
-                                    class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
-                                    <svg class="h-6 w-6 leading-none text-gray-600 stroke-current"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                    </svg>
-                                    <span class="pl-1 text-gray-500 text-md">0</span>
-                                </button>
-    
                                 <div class="group relative">
-                                    <button type="button"
-                                        class="inline-block hidden md:block w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner flex justify-center items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                        </svg>
-                                    </button>
-
+                                    <div class="inline-block hidden md:block">
+                                        <button 
+                                            class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
+                                            <svg class="h-6 w-6 leading-none text-gray-600 stroke-current"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                            </svg>
+                                            <span class="pl-1 text-gray-500 text-md">0</span>
+                                        </button>
+                                    </div>
+                                    <div id="cart">
+                                        ${await Cart.render()}
+                                    </div>
+                                </div>
+    
+                                <div id="signin" class="group relative">
                                     ${await Signin.render()}
                                 </div>
                             </div>
@@ -198,7 +201,7 @@ const Header = {
                 //await ProductAPI.search(keyword);
                 window.location.hash = `/search-products/${keyword}`;
             }
-        })
+        });
 
         $('#form-signin').addEventListener('submit', async e => {
             e.preventDefault();
@@ -206,15 +209,27 @@ const Header = {
                 email: $('#email_signin').value,
                 password: $('#password_signin').value,
             }
-            console.log(userSignin);
+            //console.log(userSignin);
 
             if (userSignin.email.length == 0 || userSignin.password.length == 0) {
                 alert("Không được để trống dữ liệu")
             } else {
-                await UserAPI.signin(userSignin);
-                window.location.hash = '/';
+                await UserAPI.signin(userSignin)
+                    .then(({
+                        data
+                    }) => {
+                        //console.log(data)
+                        //console.log(data.token)
+                        //console.log(data.user)
+                        localStorage.setItem('token', JSON.stringify(data.token))
+                        localStorage.setItem('user', JSON.stringify(data.user))
+                        reRender(Signin, '#signin');
+                        reRender(Cart, '#cart');
+                    }).catch((err) => {
+                        console.log(err.response.data.error)
+                    });
             }
-        })
+        });
     }
 }
 

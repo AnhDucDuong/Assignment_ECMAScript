@@ -7,6 +7,11 @@ import {
     productById,
     remove
 } from '../controllers/product';
+import {
+    requireSignin,
+    isAdmin,
+    isAuth
+} from "../controllers/auth";
 const router = express.Router();
 
 router.param('productId', productById); //Router lấy Id sản phẩm

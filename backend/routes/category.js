@@ -7,6 +7,11 @@ import {
     categoryById,
     remove
 } from '../controllers/category';
+import {
+    requireSignin,
+    isAuth,
+    isAdmin
+} from '../controllers/auth'
 const router = express.Router();
 
 router.param('categoryId', categoryById);

@@ -16,6 +16,7 @@ import EditCategory from './pages/EditCategory';
 import SearchProducts from './pages/SearchProducts';
 import Contact from './pages/Contact';
 import Signup from './pages/signup';
+import Signout from './component/Signout';
 
 const routes = {
     '/': Home,
@@ -31,7 +32,8 @@ const routes = {
     '/edit-category/:id': EditCategory,
     '/search-products/:id': SearchProducts,
     '/contact': Contact,
-    '/signup': Signup
+    '/signup': Signup,
+    '/signout': Signout
 }
 
 const router = async () => {
