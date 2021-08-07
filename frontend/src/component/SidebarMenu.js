@@ -1,13 +1,9 @@
+import {
+    parseRequestUrl
+} from '../pages/utils'
+
 const SidebarMenu = {
     render() {
-        /*const {
-            resource
-        } = parseRequestUrl();
-        console.log(resource);
-        if (resource === 'list-categories' || resource === 'list-products') {
-            document.getElementById('changeClass').className = 'hello'
-        }*/
-
         return /*html*/ `
             <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
                     
@@ -24,7 +20,7 @@ const SidebarMenu = {
                 </div>
         
                 <nav class="mt-10">
-                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="/">
+                    <a id="changeClass_dashboard" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="/#/dashboard">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -36,7 +32,7 @@ const SidebarMenu = {
                         <span class="mx-3">Dashboard</span>
                     </a>
 
-                    <a id="changeClass" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                    <a id="changeClass_categories" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
                         href="/#/list-categories">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -48,7 +44,7 @@ const SidebarMenu = {
                         <span class="mx-3">Danh mục</span>
                     </a>
         
-                    <a id="changeClass" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                    <a id="changeClass_products" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
                         href="/#/list-products">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -60,8 +56,8 @@ const SidebarMenu = {
                         <span class="mx-3">Sản phẩm</span>
                     </a>
         
-                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                        href="/forms">
+                    <a id="changeClass" class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        href="#">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -74,6 +70,20 @@ const SidebarMenu = {
                 </nav>
             </div>
         `
+    },
+
+    afterRender() {
+        const {
+            resource
+        } = parseRequestUrl();
+        //console.log(resource);
+        if (resource === 'list-categories') {
+            document.querySelector('#changeClass_categories').className = 'flex items-center mt-4 py-2 px-6 text-gray-500 bg-gray-700 bg-opacity-50 text-gray-100'
+        } else if (resource === 'list-products') {
+            document.querySelector('#changeClass_products').className = 'flex items-center mt-4 py-2 px-6 text-gray-500 bg-gray-700 bg-opacity-50 text-gray-100'
+        } else if (resource === 'dashboard') {
+            document.querySelector('#changeClass_dashboard').className = 'flex items-center mt-4 py-2 px-6 text-gray-500 bg-gray-700 bg-opacity-50 text-gray-100'
+        }
     }
 }
 

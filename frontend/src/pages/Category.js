@@ -16,7 +16,7 @@ const Category = {
         } = await ProductAPI.list();
         //console.log(products)
 
-        const result = products.filter(product => product.category == id).map(product => {
+        const result = products.filter(product => product.cate_id == id).map(product => {
             return /*html*/ `
                     <a href="/#/products/${product._id}" class="justify-center items-center">
                         <div class="p-4">

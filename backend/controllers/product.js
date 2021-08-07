@@ -91,17 +91,6 @@ export const remove = (req, res) => {
     });
 }
 
-export const list = (req, res) => {
-    Product.find().exec((err, data) => {
-        if (err) {
-            return res.status(400).json({
-                error: "Không có sản phẩm nào"
-            })
-        }
-        res.json(data)
-    })
-}
-
 export const update = (req, res) => {
     const product = Product(req.body);
     console.log(product)
@@ -156,4 +145,15 @@ export const update = (req, res) => {
             res.json(data)
         })
     });*/
+}
+
+export const list = (req, res) => {
+    Product.find().exec((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Không có sản phẩm nào"
+            })
+        }
+        res.json(data)
+    })
 }

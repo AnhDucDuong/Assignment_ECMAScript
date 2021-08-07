@@ -17,6 +17,7 @@ import SearchProducts from './pages/SearchProducts';
 import Contact from './pages/Contact';
 import Signup from './pages/signup';
 import Signout from './component/Signout';
+import AdminDashboard from './pages/AdminDashboard';
 
 const routes = {
     '/': Home,
@@ -33,7 +34,8 @@ const routes = {
     '/search-products/:id': SearchProducts,
     '/contact': Contact,
     '/signup': Signup,
-    '/signout': Signout
+    '/signout': Signout,
+    '/dashboard': AdminDashboard
 }
 
 const router = async () => {

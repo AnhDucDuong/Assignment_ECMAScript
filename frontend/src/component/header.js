@@ -1,4 +1,5 @@
 import CategoryAPI from "../api/categoryAPI";
+import ProductAPI from "../api/productAPI";
 import UserAPI from "../api/userAPI";
 import {
     $,
@@ -197,8 +198,8 @@ const Header = {
         $('#search').addEventListener('keydown', async e => {
             if (e.key === "Enter") {
                 const keyword = $('#search').value;
-                //console.log(keyword);
-                //await ProductAPI.search(keyword);
+                console.log(keyword);
+                await ProductAPI.search(keyword);
                 window.location.hash = `/search-products/${keyword}`;
             }
         });

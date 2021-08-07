@@ -11,14 +11,15 @@ const SearchProducts = {
             const {
                 id
             } = parseRequestUrl(); //Lấy id trên url
-            //console.log(id)
+            console.log(id)
             const {
                 data: products
             } = await ProductAPI.search(id);
+            console.log(products)
 
             const result = products.map(product => {
                 return /*html*/ `
-                    <a href="/#/products/${product.id}" class="justify-center items-center">
+                    <a href="/#/products/${product._id}" class="justify-center items-center">
                         <div class="p-4">
                             <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                                 <div class="prod-title">
