@@ -61,7 +61,7 @@ const Signin = {
                     
                     <ul class="absolute right-0 bg-gray-300 w-max border border-gray-400 shadow-2xl mt-14 opacity-0 invisible group-hover:opacity-95 group-hover:visible group-hover:mt-0 transition-all duration-500">
                         <li><a href="/#/dashboard" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Quản trị hệ thống</a></li>
-                        <li><a href="#" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Thông tin tài khoản</a></li>
+                        <li><a href="#/user_infor" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Thông tin tài khoản</a></li>
                         <li><a href="#" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Đơn hàng</a></li>
                         <li><a href="/#/signout" id="signout_btn" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Đăng xuất</a></li>
                     </ul>
@@ -74,7 +74,7 @@ const Signin = {
                 </button>
                 
                 <ul class="absolute right-0 bg-gray-300 w-max border border-gray-400 shadow-2xl mt-14 opacity-0 invisible group-hover:opacity-95 group-hover:visible group-hover:mt-0 transition-all duration-500">
-                    <li><a href="#" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Thông tin tài khoản</a></li>
+                    <li><a href="#/user_infor" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Thông tin tài khoản</a></li>
                     <li><a href="#" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Đơn hàng</a></li>
                     <li><a href="/#/signout" id="signout_btn" class="hover:bg-gray-400 hover:text-black hover:shadow-xl shadow-sm px-2 py-2 block text-gray-800">Đăng xuất</a></li>
                 </ul>

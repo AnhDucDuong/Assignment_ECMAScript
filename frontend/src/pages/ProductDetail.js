@@ -2,7 +2,8 @@ import ProductAPI from '../api/productAPI';
 import Footer from '../component/footer';
 import Header from '../component/header';
 import {
-    parseRequestUrl
+    parseRequestUrl,
+    $
 } from './utils';
 
 const ProductDetail = {
@@ -35,7 +36,7 @@ const ProductDetail = {
                             <div class="prod-info grid gap-10">
                                 <div class="flex flex-col md:flex-col justify-between items-center text-gray-900">
                                     <p class="font-bold text-xl py-4">Giá: ${product_cate.price} VNĐ</p>
-                                    <button class="w-full px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">Thêm vào giỏ</button>
+                                    <button id="add-to-cart" class="w-full px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">Thêm vào giỏ</button>
                                 </div>
                             </div>
                         </div>

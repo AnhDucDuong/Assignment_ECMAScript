@@ -12,6 +12,20 @@ export const userById = (req, res, next, id) => {
     })
 }
 
+export const update = (req, res) => {
+    const user = User(req.body);
+    user.save((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Update tài khoản không thành công"
+            })
+        }
+        user.salt = undefined;
+        user.hashed_password = undefined;
+        res.json(data)
+    })
+};
+
 export const read = (req, res) => {
     req.profile.hashed_password = undefined;
     req.profile.salt = undefined;

@@ -3,7 +3,8 @@ const router = express.Router();
 import {
     userById,
     read,
-    list
+    list,
+    update
 } from '../controllers/user';
 import {
     requireSignin,
@@ -21,6 +22,7 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
 });
 router.get('/user', list); //Danh sách users
 router.get('/user/:userId', requireSignin, isAuth, read);
+router.put('/user/:userId', update); //Update user
 
 
 module.exports = router;

@@ -93,11 +93,11 @@ export const remove = (req, res) => {
 
 export const update = (req, res) => {
     const product = Product(req.body);
-    console.log(product)
+    //console.log(product)
     product.save((err, data) => {
         if (err) {
             return res.status(400).json({
-                error: "Không thêm được sản phẩm"
+                error: "Không update được sản phẩm"
             })
         }
         res.json(data)

@@ -18,6 +18,7 @@ import Contact from './pages/Contact';
 import Signup from './pages/signup';
 import Signout from './component/Signout';
 import AdminDashboard from './pages/AdminDashboard';
+import UserInfor from './pages/UserInfor';
 
 const routes = {
     '/': Home,
@@ -35,7 +36,8 @@ const routes = {
     '/contact': Contact,
     '/signup': Signup,
     '/signout': Signout,
-    '/dashboard': AdminDashboard
+    '/dashboard': AdminDashboard,
+    '/user_infor': UserInfor
 }
 
 const router = async () => {
